@@ -1,8 +1,15 @@
+import Link from "next/link";
+
+const aboutNav = [
+  { href: "/about", label: "Profile" },
+  { href: "/about/book-reviews", label: "Book reviews" },
+];
+
 const highlights = [
-  { label: "Years in product/design", value: "8+" },
+  { label: "Years in product/design", value: "Incoming" },
   { label: "Shipped platforms", value: "Fintech, analytics, SaaS" },
   { label: "Stack", value: "Next.js · React · TS · Tailwind" },
-  { label: "Based", value: "Boston / remote" },
+  { label: "Based", value: "Boston, MA" },
 ];
 
 const timeline = [
@@ -33,6 +40,22 @@ const values = [
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-5xl space-y-16 px-4 pb-16 pt-12 sm:pt-16">
+      <div className="flex flex-wrap gap-2 rounded-full border border-slate-200 bg-slate-50 px-2 py-2 shadow-sm shadow-slate-200/80">
+        {aboutNav.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className={`inline-flex items-center rounded-full px-4 py-2 text-sm font-medium transition ${
+              item.href === "/about"
+                ? "bg-white text-slate-900 shadow-sm"
+                : "text-slate-600 hover:bg-white hover:text-slate-900"
+            }`}
+          >
+            {item.label}
+          </Link>
+        ))}
+      </div>
+
       <section className="grid gap-8 rounded-3xl border border-slate-200 bg-white px-8 py-10 shadow-[0_24px_60px_-50px_rgba(15,23,42,0.28)] md:grid-cols-[1.2fr,0.8fr]">
         <div className="space-y-4">
           <p className="text-xs uppercase tracking-[0.28em] text-slate-500">

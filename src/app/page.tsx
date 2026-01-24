@@ -31,7 +31,7 @@ export default function Home() {
         </div>
         <div className="space-y-4">
           <h1 className="text-4xl font-semibold tracking-tight text-slate-900 md:text-5xl">
-            Portfolio-in-progress with room to breathe.
+            Portfolio-in-progress...
           </h1>
           <p className="max-w-3xl text-lg text-slate-600">
             A lighter grid for work-in-flight. I build fast, measurable product

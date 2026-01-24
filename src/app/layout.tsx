@@ -48,6 +48,9 @@ export default function RootLayout({
                   <Link href="/about" className={navLinkClass}>
                     About
                   </Link>
+                  <Link href="/about/book-reviews" className={navLinkClass}>
+                    Book reviews
+                  </Link>
                 </div>
                 <a
                   href="mailto:hello@jayson.design"
