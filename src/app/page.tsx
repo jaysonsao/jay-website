@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const tools = [
@@ -12,9 +13,20 @@ const tools = [
 ];
 
 const projectSlots = [
-  { title: "Project slot A", hint: "Link or embed a live demo." },
-  { title: "Project slot B", hint: "Case study, prototype, or repo." },
-  { title: "Project slot C", hint: "In-progress experiment." },
+  {
+    title: "PrepDragon, Interview Smarter",
+    hint: "Link or embed a live demo.",
+    image: "/previews/prepdragon_preview.png",
+    imageAlt: "PrepDragon interview prep mobile preview",
+    href: "https://github.com/jaysonsao/prepdragon",
+  },
+  { title: "Virtual Photo Albums", 
+    image: "/previews/prepdragon_preview.png",
+    imageAlt: "Virtual Photo Album personal blog",
+    hint: "Case study, prototype, or repo.", 
+    href: "https://github.com/jaysonsao/PhotoAlbums-jbs" },
+
+  { title: "Flash Cards AI + Dictionary API", hint: "In-progress experiment." },
   { title: "Project slot D", hint: "Reserve for the next drop." },
 ];
 
@@ -94,25 +106,66 @@ export default function Home() {
           </span>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
-          {projectSlots.map((slot) => (
-            <article
-              key={slot.title}
-              className="group flex min-h-[180px] flex-col justify-between rounded-3xl border border-[hsl(186_55%_84%)] bg-white px-6 py-6 shadow-[0_24px_60px_-50px_rgba(48,196,204,0.5)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_26px_70px_-46px_rgba(48,196,204,0.6)]"
-            >
-              <div className="space-y-2">
-                <h3 className="text-lg font-semibold text-slate-900">
-                  {slot.title}
-                </h3>
-                <p className="text-sm text-slate-500">{slot.hint}</p>
+          {projectSlots.map((slot) => {
+            const card = (
+              <article
+                key={slot.title}
+                className="group flex min-h-[200px] flex-col justify-between overflow-hidden rounded-3xl border border-[hsl(186_55%_84%)] bg-white shadow-[0_24px_60px_-50px_rgba(48,196,204,0.5)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_26px_70px_-46px_rgba(48,196,204,0.6)]"
+              >
+                {slot.image ? (
+                  <div className="relative h-40 w-full overflow-hidden border-b border-[hsl(186_55%_84%)] bg-[hsl(186_70%_96%)]">
+                    <Image
+                      src={slot.image}
+                      alt={slot.imageAlt ?? slot.title}
+                      fill
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      className="object-cover transition duration-300 group-hover:scale-[1.02]"
+                      priority
+                    />
+                  </div>
+                ) : null}
+                <div className="flex flex-1 flex-col justify-between px-6 py-6">
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold text-slate-900">
+                      {slot.title}
+                    </h3>
+                    <p className="text-sm text-slate-500">{slot.hint}</p>
+                  </div>
+                  <div className="flex items-center justify-between pt-4 text-sm text-slate-400">
+                    <span className="inline-flex items-center gap-2 text-[hsl(186_75%_32%)]">
+                      {slot.href ? (
+                        <>
+                          <span>View project</span>
+                          <span aria-hidden>→</span>
+                        </>
+                      ) : (
+                        <span>Paste </span>
+                      )}
+                    </span>
+                    <span className="rounded-full border border-[hsl(186_60%_80%)] bg-[hsl(186_70%_94%)] px-3 py-1 text-xs uppercase tracking-[0.16em] text-[hsl(186_75%_32%)]">
+                      {slot.href ? "linked" : "empty"}
+                    </span>
+                  </div>
+                </div>
+              </article>
+            );
+
+            return slot.href ? (
+              <Link
+                key={slot.title}
+                href={slot.href}
+                target="_blank"
+                rel="noreferrer"
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(186_70%_60%)]"
+              >
+                {card}
+              </Link>
+            ) : (
+              <div key={slot.title} className="focus-visible:outline-none">
+                {card}
               </div>
-              <div className="flex items-center justify-between pt-4 text-sm text-slate-400">
-                <span>Paste link</span>
-                <span className="rounded-full border border-[hsl(186_60%_80%)] bg-[hsl(186_70%_94%)] px-3 py-1 text-xs uppercase tracking-[0.16em] text-[hsl(186_75%_32%)]">
-                  empty
-                </span>
-              </div>
-            </article>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -134,7 +187,7 @@ export default function Home() {
               <span className="mt-1 h-2 w-2 rounded-full bg-slate-900" aria-hidden />
               <span>Rapid prototypes that graduate to production without rewrites.</span>
             </li>
-          </ul>
+          </ul>link
         </div>
         <div className="space-y-4 rounded-2xl border border-slate-200 bg-white px-6 py-6 shadow-[0_16px_40px_-30px_rgba(15,23,42,0.35)]">
           <p className="text-xs uppercase tracking-[0.28em] text-slate-500">
