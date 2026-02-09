@@ -1,6 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Jayson Sao · Product Designer & Engineer",
@@ -20,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-white text-slate-900 antialiased">
+      <body className={`${spaceGrotesk.className} bg-white text-slate-900 antialiased`}>
         <div className="flex min-h-screen flex-col">
           <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/90 backdrop-blur shadow-[0_8px_30px_-18px_rgba(15,23,42,0.2)]">
             <div className="mx-auto flex w-full items-center justify-between px-6 py-5">
