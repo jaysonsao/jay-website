@@ -85,6 +85,28 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "learngit",
+    title: "LearnGit",
+    summary: "A guided, interactive walkthrough for core Git workflows.",
+    role: "Product engineering",
+    year: "2023",
+    focus: "Hands-on onboarding for version control",
+    image: "/previews/greplab_preview.png",
+    imageAlt: "LearnGit terminal walkthrough preview",
+    stack: ["Node.js", "CLI UX", "Markdown"],
+    highlights: ["Guided commits", "Safe sandboxing", "Checkpoint recovery"],
+    detail: {
+      intro:
+        "LearnGit is a bite-sized tutorial that focuses on practical Git habits instead of endless theory.",
+      problem:
+        "New developers often learn Git under pressure, which leads to fragile habits and avoidable mistakes.",
+      approach:
+        "I built a guided flow that explains each command in context and keeps learners inside a safe sandbox.",
+      outcome:
+        "Early feedback showed lower drop-off and more confidence with branching. Placeholder for richer data.",
+    },
+  },
+  {
     slug: "flash-cards-ai",
     title: "Flash Cards AI",
     summary: "Smart cards that pull definitions and examples on demand.",
@@ -102,6 +124,28 @@ export const projects: Project[] = [
         "I built a flow that generates cards from a single word, then layers in short practice sessions.",
       outcome:
         "Prototype users spent more time per session when cards included short examples. Placeholder for future metrics.",
+    },
+  },
+  {
+    slug: "this-website",
+    title: "This Website",
+    summary: "A living portfolio with evolving experiments and UI studies.",
+    role: "Design + engineering",
+    year: "2025",
+    focus: "Iterative personal brand system",
+    image: "/previews/greplab_preview.png",
+    imageAlt: "Portfolio site interface preview",
+    stack: ["Next.js", "TypeScript", "Tailwind"],
+    highlights: ["Modular sections", "Fast iteration", "Content-ready layouts"],
+    detail: {
+      intro:
+        "This site is a flexible canvas for experiments, case studies, and new UI explorations.",
+      problem:
+        "Most portfolio sites freeze after launch, making it hard to show work-in-progress and new ideas.",
+      approach:
+        "I built a composable layout system that lets me swap sections and publish quickly.",
+      outcome:
+        "Updates now take minutes instead of days. Placeholder for future metrics and learnings.",
     },
   },
 ];

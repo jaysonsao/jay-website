@@ -85,17 +85,93 @@
   }
 }
 
-@keyframes marquee-left {
+@keyframes water-drift {
   0% {
-    transform: translateX(0);
+    transform: translate3d(-3%, -2%, 0) rotate(0deg);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(3%, 2%, 0) rotate(6deg);
+  }
+}
+
+@keyframes water-ripple {
+  0% {
+    opacity: 0.05;
+    transform: scale(0.98);
+  }
+  35% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.08);
   }
 }
 
 @layer utilities {
-  .marquee-track {
-    animation: marquee-left 35s linear infinite;
+  .water-card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+  .water-card::before {
+    content: "";
+    position: absolute;
+    inset: -20% -10%;
+    background: radial-gradient(
+        circle at var(--water-x, 50%) var(--water-y, 40%),
+        rgba(120, 200, 255, 0.35),
+        transparent 45%
+      ),
+      radial-gradient(
+        circle at calc(var(--water-x, 50%) + 60px)
+          calc(var(--water-y, 40%) + 40px),
+        rgba(180, 220, 255, 0.25),
+        transparent 52%
+      ),
+      conic-gradient(
+        from 120deg,
+        rgba(90, 200, 235, 0.25),
+        rgba(170, 215, 255, 0.25),
+        rgba(120, 220, 210, 0.2),
+        rgba(90, 200, 235, 0.25)
+      );
+    opacity: 0;
+    filter: blur(18px);
+    transition: opacity 240ms ease;
+    z-index: 0;
+  }
+  .water-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-radial-gradient(
+      circle at var(--water-x, 50%) var(--water-y, 50%),
+      rgba(90, 180, 255, 0.35) 0 2px,
+      rgba(90, 180, 255, 0) 6px 14px
+    );
+    opacity: 0;
+    mix-blend-mode: screen;
+    transition: opacity 240ms ease;
+    z-index: 1;
+  }
+  .water-card:hover::before {
+    opacity: 0.85;
+    animation: water-drift 5s ease-in-out infinite alternate;
+  }
+  .water-card:hover::after {
+    opacity: 0.6;
+    animation: water-ripple 1.8s ease-out infinite;
+  }
+  .water-card > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .water-card::before,
+  .water-card::after {
+    animation: none;
   }
 }
