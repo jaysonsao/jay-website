@@ -20,14 +20,32 @@ const projectSlots = [
     imageAlt: "PrepDragon interview prep mobile preview",
     href: "https://github.com/jaysonsao/prepdragon",
   },
-  { title: "Virtual Photo Albums", 
+  { 
+    title: "GrepLab",
+    hint: "Interactive shell progressive lesson plan to learn grep & regex",
+    image: "/previews/greplab_preview.png",
+    imageAlt: "shell using regex",
+    href: "https://github.com/jaysonsao/greplab",
+  },
+
+  { title: "LearnGit",
+    hint: "Interactive tutorial.",
+    image: "/previews/greplab_preview.png",
+    imageAlt: "shell using regex",
+    href: "https://github.com/jaysonsao/greplab",
+  },
+   { title: "Virtual Photo Albums", 
     image: "/previews/prepdragon_preview.png",
     imageAlt: "Virtual Photo Album personal blog",
     hint: "Case study, prototype, or repo.", 
     href: "https://github.com/jaysonsao/PhotoAlbums-jbs" },
 
-  { title: "Flash Cards AI + Dictionary API", hint: "In-progress experiment." },
-  { title: "Project slot D", hint: "Reserve for the next drop." },
+  { title: "This Website",
+    hint: "You're lookin at it :)",
+    image: "/previews/greplab_preview.png",
+    imageAlt: "this website lol",
+    href: "https://github.com/jaysonsao/jay-website",
+  },
 ];
 
 export default function Home() {
@@ -52,12 +70,14 @@ export default function Home() {
           </p>
         </div>
         <div className="flex flex-wrap gap-3 text-sm">
-          <Link
-            href="/about"
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 font-medium text-white transition hover:translate-y-0.5 hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300"
           >
-            About / CV
-          </Link>
+            Resume
+          </a>
           <a
             href="mailto:hello@jayson.design"
             className="inline-flex items-center justify-center rounded-full border border-slate-200 px-6 py-3 font-medium text-slate-800 transition hover:-translate-y-0.5 hover:border-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-200"
@@ -113,13 +133,13 @@ export default function Home() {
                 className="group flex min-h-[200px] flex-col justify-between overflow-hidden rounded-3xl border border-[hsl(186_55%_84%)] bg-white shadow-[0_24px_60px_-50px_rgba(48,196,204,0.5)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_26px_70px_-46px_rgba(48,196,204,0.6)]"
               >
                 {slot.image ? (
-                  <div className="relative h-40 w-full overflow-hidden border-b border-[hsl(186_55%_84%)] bg-[hsl(186_70%_96%)]">
+                  <div className="relative flex h-40 w-full items-center justify-center overflow-hidden border-b border-[hsl(186_55%_84%)] bg-[hsl(186_70%_96%)]">
                     <Image
                       src={slot.image}
                       alt={slot.imageAlt ?? slot.title}
                       fill
                       sizes="(min-width: 768px) 50vw, 100vw"
-                      className="object-cover transition duration-300 group-hover:scale-[1.02]"
+                      className="object-contain transition duration-300 group-hover:scale-[1.02]"
                       priority
                     />
                   </div>
