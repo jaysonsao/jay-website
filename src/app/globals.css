@@ -84,3 +84,18 @@
     color: hsl(var(--ink));
   }
 }
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@layer utilities {
+  .marquee-track {
+    animation: marquee-left 35s linear infinite;
+  }
+}

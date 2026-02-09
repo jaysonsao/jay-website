@@ -13,10 +13,10 @@ const highlights = [
 ];
 
 const timeline = [
-  { year: "2025", title: "Exploring AI + physical systems", note: "Research collaborations; looking for spring/summer roles." },
-  { year: "2024", title: "Safelogic (Co-Op)", note: "Engineering + design for secure workflows." },
-  { year: "2022-2023", title: "Independent practice", note: "Design/engineering sprints for early-stage teams." },
-  { year: "2019-2021", title: "Northwind (Founding designer)", note: "Design system + analytics collab features." },
+  { year: "2026", title: "Versetal Information Systems (BU Spark!)", note: "Software Development lab through BU Spark!" },
+  { year: "2024-2025", title: "Safelogic Intern II / Co-op", note: "Internal tools and cryptographic module compliance for FIPS 140-3." },
+  { year: "2024", title: "Safelogic Intern I", note: "Internal tools and AI agent design" },
+  { year: "2019-Present", title: "BostonCentral.com", note: "Part-time software development for family business" },
 ];
 
 const values = [

@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className="bg-white text-slate-900 antialiased">
         <div className="flex min-h-screen flex-col">
           <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/90 backdrop-blur shadow-[0_8px_30px_-18px_rgba(15,23,42,0.2)]">
-            <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-6 py-5">
+            <div className="mx-auto flex w-full items-center justify-between px-6 py-5">
               <Link
                 href="/"
                 className="group flex items-center gap-3 text-lg font-semibold tracking-tight"
@@ -61,11 +61,11 @@ export default function RootLayout({
               </nav>
             </div>
           </header>
-          <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-16">
+          <main className="mx-auto w-full flex-1 px-6 py-16">
             {children}
           </main>
           <footer className="border-t border-slate-200 bg-white">
-            <div className="mx-auto flex w-full max-w-5xl flex-col gap-2 px-6 py-8 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+            <div className="mx-auto flex w-full flex-col gap-2 px-6 py-8 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
               <p>© {new Date().getFullYear()} Jayson Sao. All rights reserved.</p>
               <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
                 Crafted with Next.js & Tailwind CSS
