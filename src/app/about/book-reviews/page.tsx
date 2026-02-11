@@ -88,7 +88,7 @@ export default function BookReviewsPage() {
             Book reviews
           </p>
           <h1 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
-            Marginalia from the shelf.
+            Quality reads from my shelf
           </h1>
           <p className="max-w-2xl text-base text-slate-600">
             Light notes from books that stuck—quick to scan, easy to reuse in product work.
