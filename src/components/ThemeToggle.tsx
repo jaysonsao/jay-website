@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useSyncExternalStore } from "react";
 
 const STORAGE_KEY = "theme";
+const THEME_CHANGE_EVENT = "theme-change";
 
 type Theme = "light" | "dark";
 
@@ -13,48 +14,71 @@ function applyTheme(theme: Theme) {
   document.documentElement.classList.toggle("dark", theme === "dark");
 }
 
-function getInitialTheme(): Theme {
+function readStoredTheme(): Theme | null {
   if (typeof window === "undefined") {
-    return "light";
+    return null;
   }
   const stored = window.localStorage.getItem(STORAGE_KEY) as Theme | null;
   if (stored === "light" || stored === "dark") {
     return stored;
   }
-  const prefersDark = window.matchMedia(
-    "(prefers-color-scheme: dark)",
-  ).matches;
-  return prefersDark ? "dark" : "light";
+  return null;
+}
+
+function getSnapshot(): Theme {
+  if (typeof window === "undefined") {
+    return "light";
+  }
+  const stored = readStoredTheme();
+  if (stored) {
+    return stored;
+  }
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+}
+
+function getServerSnapshot(): Theme {
+  return "light";
+}
+
+function subscribe(onStoreChange: () => void) {
+  if (typeof window === "undefined") {
+    return () => {};
+  }
+
+  const media = window.matchMedia("(prefers-color-scheme: dark)");
+  const handleThemeChange = () => onStoreChange();
+  const handleMediaChange = () => {
+    if (readStoredTheme()) {
+      return;
+    }
+    onStoreChange();
+  };
+
+  window.addEventListener(THEME_CHANGE_EVENT, handleThemeChange);
+  window.addEventListener("storage", handleThemeChange);
+  media.addEventListener?.("change", handleMediaChange);
+
+  return () => {
+    window.removeEventListener(THEME_CHANGE_EVENT, handleThemeChange);
+    window.removeEventListener("storage", handleThemeChange);
+    media.removeEventListener?.("change", handleMediaChange);
+  };
 }
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("light");
+  const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   useEffect(() => {
-    const initial = getInitialTheme();
-    setTheme(initial);
-    applyTheme(initial);
-
-    const media = window.matchMedia("(prefers-color-scheme: dark)");
-    const handleChange = (event: MediaQueryListEvent) => {
-      const stored = window.localStorage.getItem(STORAGE_KEY);
-      if (stored === "light" || stored === "dark") {
-        return;
-      }
-      const next = event.matches ? "dark" : "light";
-      setTheme(next);
-      applyTheme(next);
-    };
-
-    media.addEventListener?.("change", handleChange);
-    return () => media.removeEventListener?.("change", handleChange);
-  }, []);
+    applyTheme(theme);
+  }, [theme]);
 
   const toggleTheme = () => {
     const next = theme === "dark" ? "light" : "dark";
-    setTheme(next);
     window.localStorage.setItem(STORAGE_KEY, next);
     applyTheme(next);
+    window.dispatchEvent(new Event(THEME_CHANGE_EVENT));
   };
 
   const label = theme === "dark" ? "Light mode" : "Dark mode";
@@ -64,7 +88,7 @@ export default function ThemeToggle() {
       type="button"
       onClick={toggleTheme}
       aria-label={label}
-      className="fixed right-4 top-4 z-50 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-slate-700 shadow-[0_10px_30px_-18px_rgba(15,23,42,0.35)] backdrop-blur transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 dark:border-slate-700 dark:bg-slate-900/90 dark:text-slate-100"
+      className="fixed right-4 top-4 z-50 inline-flex items-center border border-slate-300 bg-white px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-700 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
     >
       {theme === "dark" ? "Light" : "Dark"}
     </button>
