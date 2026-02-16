@@ -28,8 +28,8 @@ export default async function ProjectPage({
         ← Back to home
       </Link>
 
-      <section className="overflow-hidden border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900">
-        <div className="relative h-80 w-full bg-slate-100 dark:bg-slate-800 sm:h-[440px]">
+      <section className="overflow-hidden border border-stone-300 bg-[hsl(42_36%_92%)] dark:border-slate-700 dark:bg-slate-900">
+        <div className="relative h-80 w-full bg-[hsl(42_24%_86%)] dark:bg-slate-800 sm:h-[440px]">
           {project.image ? (
             <Image
               src={project.image}
@@ -47,7 +47,7 @@ export default async function ProjectPage({
         </div>
       </section>
 
-      <section className="grid gap-10 border-t border-slate-200 pt-8 dark:border-slate-800 md:grid-cols-[1.4fr,0.6fr]">
+      <section className="grid gap-10 border-t border-stone-300 pt-8 dark:border-slate-800 md:grid-cols-[1.4fr,0.6fr]">
         <div className="space-y-4">
           <div className="space-y-2">
             <h1 className="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
@@ -68,7 +68,7 @@ export default async function ProjectPage({
             Project link →
           </a>
         </div>
-        <aside className="h-fit border border-slate-200 bg-white px-5 py-4 dark:border-slate-700 dark:bg-slate-900">
+        <aside className="h-fit border border-stone-300 bg-[hsl(42_36%_92%)] px-5 py-4 dark:border-slate-700 dark:bg-slate-900">
           <p className="text-xs uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
             Tech Stack
           </p>
@@ -76,7 +76,7 @@ export default async function ProjectPage({
             {project.stack.map((tool) => (
               <span
                 key={`${project.slug}-stack-${tool}`}
-                className="border border-slate-200 bg-slate-50 px-2 py-0.5 dark:border-slate-700 dark:bg-slate-800"
+                className="border border-stone-300 bg-[hsl(42_35%_92%)] px-2 py-0.5 dark:border-slate-700 dark:bg-slate-800"
               >
                 {tool}
               </span>

@@ -12,10 +12,10 @@ function ProjectCard({ project }: { project: Project }) {
       href={`/projects/${project.slug}`}
       className="group block no-underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(186_70%_60%)] dark:focus-visible:ring-[hsl(186_70%_72%)]"
     >
-      <article className="relative flex flex-col overflow-hidden border border-slate-300/80 bg-[hsl(210_30%_98%)] transition group-hover:border-slate-400 dark:border-slate-700 dark:bg-[hsl(217_25%_16%)] dark:group-hover:border-slate-500 md:flex-row">
-        <div className="relative flex w-full shrink-0 items-center justify-center border-b border-slate-300/80 bg-slate-100 p-3 dark:border-slate-700 dark:bg-slate-900 md:w-80 md:border-b-0 md:border-r">
+      <article className="relative flex flex-col overflow-hidden border border-stone-300/80 bg-[hsl(42_30%_92%)] transition group-hover:border-stone-400 dark:border-slate-700 dark:bg-[hsl(217_25%_16%)] dark:group-hover:border-slate-500 md:flex-row">
+        <div className="relative flex w-full shrink-0 items-center justify-center border-b border-stone-300/80 bg-[hsl(42_24%_89%)] p-3 dark:border-slate-700 dark:bg-slate-900 md:w-80 md:border-b-0 md:border-r">
           {project.image ? (
-            <div className="relative aspect-[47/39] w-full overflow-hidden border border-slate-200/80 bg-white dark:border-slate-700 dark:bg-slate-950">
+            <div className="relative aspect-[47/39] w-full overflow-hidden border border-stone-300/80 bg-[hsl(42_38%_94%)] dark:border-slate-700 dark:bg-slate-950">
               <Image
                 src={project.image}
                 alt={project.imageAlt ?? project.title}
@@ -25,7 +25,7 @@ function ProjectCard({ project }: { project: Project }) {
               />
             </div>
           ) : (
-            <div className="flex aspect-[47/39] w-full items-center justify-center border border-slate-200/80 bg-white text-sm uppercase tracking-[0.3em] text-slate-500 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-400">
+            <div className="flex aspect-[47/39] w-full items-center justify-center border border-stone-300/80 bg-[hsl(42_38%_94%)] text-sm uppercase tracking-[0.3em] text-slate-500 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-400">
               <span className="px-3 text-center">{project.title}</span>
             </div>
           )}
@@ -35,7 +35,7 @@ function ProjectCard({ project }: { project: Project }) {
             <h3 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-100 sm:text-2xl">
               {project.title}
             </h3>
-            <span className="border border-slate-200 bg-slate-50 px-2 py-0.5 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
+            <span className="border border-stone-300 bg-[hsl(42_34%_93%)] px-2 py-0.5 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
               {project.year}
             </span>
           </div>
@@ -61,7 +61,7 @@ function ProjectCard({ project }: { project: Project }) {
                 {project.stack.map((tool) => (
                   <span
                     key={`${project.slug}-${tool}`}
-                    className="border border-slate-200 bg-slate-50 px-2 py-0.5 dark:border-slate-700 dark:bg-slate-800"
+                    className="border border-stone-300 bg-[hsl(42_34%_93%)] px-2 py-0.5 dark:border-slate-700 dark:bg-slate-800"
                   >
                     {tool}
                   </span>
@@ -70,7 +70,7 @@ function ProjectCard({ project }: { project: Project }) {
             </div>
             <div className="flex items-center justify-end">
               <span className="text-sm font-semibold text-[hsl(186_68%_36%)] dark:text-[hsl(186_70%_72%)]">
-                View Project →
+                View Project
               </span>
             </div>
           </div>
@@ -79,7 +79,7 @@ function ProjectCard({ project }: { project: Project }) {
             {project.highlights.slice(0, 3).map((highlight) => (
               <span
                 key={`${project.slug}-${highlight}`}
-                className="border border-[hsl(186_60%_82%)] bg-[hsl(186_90%_96%)] px-2 py-0.5 dark:border-[hsl(186_42%_34%)] dark:bg-[hsl(186_24%_22%)]"
+                className="border border-stone-300 bg-[hsl(42_34%_93%)] px-2 py-0.5 dark:border-slate-700 dark:bg-slate-800"
               >
                 {highlight}
               </span>

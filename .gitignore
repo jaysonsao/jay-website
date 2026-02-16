@@ -41,7 +41,10 @@ yarn-error.log*
 next-env.d.ts
 
 resume.pdf
+note.txt
 notes.txt
+
+*.txt
 
 swag.jpg
 fish3.riv

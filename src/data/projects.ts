@@ -48,6 +48,28 @@ export const projects: Project[] = [
         "Early users reported faster prep sessions and more targeted improvements. This is a placeholder for fuller metrics.",
     },
   },
+    {
+    slug: "learngit",
+    title: "LearnGit",
+    summary: "A guided, interactive walkthrough for core Git workflows and habits.",
+    role: "Product engineering",
+    year: "Spring 2026",
+    focus: "Reduces onboarding friction by teaching version control in a safe, hands-on flow.",
+    image: preview("jithub_preview.png"),
+    imageAlt: "LearnGit terminal walkthrough preview",
+    stack: ["Node.js", "CLI UX", "Markdown"],
+    highlights: ["Guided commits", "Safe sandboxing", "Checkpoint recovery"],
+    detail: {
+      intro:
+        "LearnGit is a bite-sized tutorial that focuses on practical Git habits instead of endless theory.",
+      problem:
+        "New developers often learn Git under pressure, which leads to fragile habits and avoidable mistakes.",
+      approach:
+        "I built a guided flow that explains each command in context and keeps learners inside a safe sandbox.",
+      outcome:
+        "Early feedback showed lower drop-off and more confidence with branching. Placeholder for richer data.",
+    },
+  },
   {
     slug: "greplab",
     title: "GrepLab",
@@ -68,28 +90,6 @@ export const projects: Project[] = [
         "I built a lesson runner that validates commands in real time and provides micro-hints without leaving the terminal.",
       outcome:
         "Learners completed core lessons faster in informal tests. Placeholder for detailed outcomes and usage data.",
-    },
-  },
-  {
-    slug: "learngit",
-    title: "LearnGit",
-    summary: "A guided, interactive walkthrough for core Git workflows and habits.",
-    role: "Product engineering",
-    year: "Spring 2026",
-    focus: "Reduces onboarding friction by teaching version control in a safe, hands-on flow.",
-    image: preview("jithub_preview.png"),
-    imageAlt: "LearnGit terminal walkthrough preview",
-    stack: ["Node.js", "CLI UX", "Markdown"],
-    highlights: ["Guided commits", "Safe sandboxing", "Checkpoint recovery"],
-    detail: {
-      intro:
-        "LearnGit is a bite-sized tutorial that focuses on practical Git habits instead of endless theory.",
-      problem:
-        "New developers often learn Git under pressure, which leads to fragile habits and avoidable mistakes.",
-      approach:
-        "I built a guided flow that explains each command in context and keeps learners inside a safe sandbox.",
-      outcome:
-        "Early feedback showed lower drop-off and more confidence with branching. Placeholder for richer data.",
     },
   },
   {

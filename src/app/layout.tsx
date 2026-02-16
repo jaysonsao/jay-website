@@ -39,10 +39,10 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
-      <body className={`${spaceGrotesk.className} bg-white text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100`}>
+      <body className={`${spaceGrotesk.className} bg-background text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100`}>
         <div className="flex min-h-screen flex-col">
           <ThemeToggle />
-          <header className="sticky top-0 z-40 border-b border-slate-200/90 bg-white/95 dark:border-slate-800 dark:bg-slate-950/95">
+          <header className="sticky top-0 z-40 border-b border-slate-200/90 bg-[hsla(42,32%,93%,0.95)] dark:border-slate-800 dark:bg-slate-950/95">
             <div className="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6">
               <Link href="/" className="flex flex-col leading-tight no-underline hover:no-underline">
                 <span className="text-base font-semibold tracking-tight text-slate-900 dark:text-slate-100">
@@ -54,14 +54,11 @@ export default function RootLayout({
               </Link>
               <nav className="flex w-full items-center justify-between gap-3 sm:w-auto sm:justify-end">
                 <div className="hidden items-center gap-3 sm:flex">
-                  <Link href="/" className={navLinkClass}>
-                    Home
-                  </Link>
                   <Link href="/#projects" className={navLinkClass}>
                     Projects
                   </Link>
-                  <Link href="/#about" className={navLinkClass}>
-                    About
+                  <Link href="/koi-pond" className={navLinkClass}>
+                    Koi Pond
                   </Link>
                   <a
                     href="/resume.pdf"
@@ -87,10 +84,39 @@ export default function RootLayout({
           <main className="mx-auto w-full flex-1 px-6 py-10">
             {children}
           </main>
-          <footer className="border-t border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
-            <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-4 py-8 text-sm text-slate-500 dark:text-slate-400 sm:flex-row sm:items-center sm:justify-between sm:px-6">
-              <p>© {new Date().getFullYear()} Jayson Sao. All rights reserved.</p>
-              <p className="text-xs uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+          <footer className="border-t border-slate-200 bg-[hsl(42_32%_93%)] dark:border-slate-800 dark:bg-slate-950">
+            <div className="mx-auto grid w-full max-w-6xl gap-4 px-4 py-8 text-sm text-slate-500 dark:text-slate-400 sm:grid-cols-3 sm:items-center sm:px-6">
+              <p className="text-center sm:text-left">© {new Date().getFullYear()} Jayson Sao. All rights reserved.</p>
+              <div id="contact" className="flex flex-col items-center justify-center gap-2 text-xs font-medium">
+                <p className="uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">Contact</p>
+                <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+                <a
+                  href="mailto:jaysonsao@gmail.com"
+                  className="no-underline transition hover:no-underline text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100"
+                >
+                  jaysonsao@gmail.com
+                </a>
+                <span className="text-slate-400 dark:text-slate-600">•</span>
+                <a
+                  href="https://github.com/jaysonsao"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="no-underline transition hover:no-underline text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100"
+                >
+                  GitHub
+                </a>
+                <span className="text-slate-400 dark:text-slate-600">•</span>
+                <a
+                  href="https://www.linkedin.com/in/jaysonsao"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="no-underline transition hover:no-underline text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100"
+                >
+                  LinkedIn
+                </a>
+                </div>
+              </div>
+              <p className="text-center text-xs uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400 sm:text-right">
                 Crafted with Next.js & Tailwind CSS
               </p>
             </div>
