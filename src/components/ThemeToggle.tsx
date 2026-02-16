@@ -88,7 +88,7 @@ export default function ThemeToggle() {
       type="button"
       onClick={toggleTheme}
       aria-label={label}
-      className="fixed right-4 top-4 z-50 inline-flex items-center border border-slate-300 bg-white px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-700 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
+      className="fixed right-4 top-4 z-50 inline-flex items-center border border-stone-300 bg-[hsl(42_32%_93%)] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-700 transition hover:border-stone-400 hover:bg-[hsl(42_34%_90%)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 dark:border-stone-500 dark:bg-[hsl(42_30%_88%)] dark:text-slate-800 dark:hover:border-stone-400 dark:hover:bg-[hsl(42_32%_86%)]"
     >
       {theme === "dark" ? "Light" : "Dark"}
     </button>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { bookReviews } from "@/data/book-reviews";
+import { getBookStatusMeta } from "@/lib/bookStatus";
 
 export function generateStaticParams() {
   return bookReviews.map((book) => ({ slug: book.slug }));
@@ -18,6 +19,7 @@ export default async function BookReviewPage({
   if (!book) {
     notFound();
   }
+  const statusMeta = getBookStatusMeta(book.status);
 
   return (
     <div className="mx-auto max-w-4xl space-y-8 px-4 pb-16 pt-10 sm:pt-12">
@@ -34,6 +36,12 @@ export default async function BookReviewPage({
             <p className="text-xs uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
               Review Notes
             </p>
+            <div
+              className={`inline-flex w-fit items-center justify-start gap-2 self-start text-left text-xs uppercase tracking-[0.2em] ${statusMeta.textClassName}`}
+            >
+              <span className={`inline-flex h-2 w-2 rounded-full ${statusMeta.dotClassName}`} aria-hidden />
+              <span>{statusMeta.label}</span>
+            </div>
             <h1 className="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100 md:text-4xl">
               {book.title}
             </h1>

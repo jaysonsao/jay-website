@@ -1,67 +1,82 @@
+import type { BookStatus } from "@/lib/bookStatus";
+
 export type BookReview = {
   slug: string;
   title: string;
   author: string;
+  status: BookStatus;
   image?: string;
   takeaway: string;
   review: string[];
 };
 
-type BaseBook = Omit<BookReview, "takeaway" | "review">;
+type BaseBook = Omit<BookReview, "takeaway" | "review"> & {
+  takeaway?: string;
+  review?: string[];
+};
 
 const baseBooks: BaseBook[] = [
   {
     slug: "project-hail-mary",
     title: "Project Hail Mary",
     author: "Andy Weir",
+    status: "read",
     image: "/covers/project_hail_mary.jpg",
   },
   {
     slug: "artemis",
     title: "Artemis",
     author: "Andy Weir",
+    status: "read",
     image: "/covers/artemis.jpg",
   },
   {
     slug: "armada",
     title: "Armada",
     author: "Ernest Cline",
+    status: "read-noted",
     image: "/covers/armada.jpg",
   },
   {
     slug: "we-are-legion",
     title: "We Are Legion (We are Bob)",
     author: "Dennis E. Taylor",
+    status: "read-noted",
     image: "/covers/we_are_legion.jpg",
   },
   {
     slug: "for-we-are-many",
     title: "For We Are Many",
     author: "Dennis E. Taylor",
+    status: "read",
     image: "/covers/many.jpeg",
   },
   {
     slug: "the-mountain-in-the-sea",
     title: "The Mountain in the Sea",
     author: "",
+    status: "in-progress",
     image: "/covers/mountain.avif",
   },
   {
     slug: "ocean",
     title: "Ocean",
     author: "David Attenborough",
+    status: "read",
     image: "/covers/ocean.jpg",
   },
   {
     slug: "abundance",
     title: "Abundance",
     author: "Ezra Klein & Derek Thompson",
+    status: "not-started",
     image: "/covers/abundance.jpg",
   },
   {
     slug: "the-four-realms-of-existence",
     title: "The Four Realms of Existence",
     author: "Joseph E. LeDoux",
+    status: "in-progress",
     image: "/covers/realms.jpg",
   },
 ];
@@ -133,10 +148,10 @@ const buildTakeaway = (firstParagraph: string) => {
 };
 
 export const bookReviews: BookReview[] = baseBooks.map((book) => {
-  const review = buildReviewParagraphs(book.slug);
+  const review = book.review ?? buildReviewParagraphs(book.slug);
   return {
     ...book,
     review,
-    takeaway: buildTakeaway(review[0]),
+    takeaway: book.takeaway ?? buildTakeaway(review[0]),
   };
 });

@@ -1,12 +1,12 @@
-import Link from "next/link";
+import Image from "next/image";
 import ProjectStack from "@/components/ProjectStack";
 import { projects } from "@/data/projects";
 
 const focusAreas = [
-  "Full-Stack Product Engineering",
-  "Distributed Systems & Infrastructure",
-  "Cryptography & Security",
-  "Developer Tooling & Education",
+  "Building hands-on learning and practice tools",
+  "Building backend services that are reliable and easy to maintain",
+  "Deploying and running apps in the cloud",
+  "Using security and cryptography where they solve real problems",
 ];
 
 const coreTech = [
@@ -21,9 +21,9 @@ const coreTech = [
 ];
 
 const experienceHighlights = [
-  "Versetal Information Systems (BU Spark!), Software Development Lab (2026)",
-  "SafeLogic Intern II / Co-op, internal tools and FIPS 140-3 support (2024-2025)",
-  "BostonCentral.com, part-time software development (2019-Present)",
+  "Software Development Lab, Versetal Information Systems (BU Spark!) (2026): Built software features and supported delivery work.",
+  "Intern II / Co-op, SafeLogic (2024-2025): Worked on internal tools and FIPS 140-3 support tasks.",
+  "Part-Time Developer, BostonCentral.com (2019-Present): Maintain and ship web product updates.",
 ];
 
 export default function Home() {
@@ -36,97 +36,117 @@ export default function Home() {
               Jayson Sao
             </p>
             <h1 className="max-w-3xl text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl">
-              Full-stack developer building interactive learning tools and systems
-              software.
+              I build software tools that help people learn by doing.
             </h1>
-            <p className="text-sm text-slate-600 dark:text-slate-300">
-              PrepDragon · GrepLab · Distributed systems · Cryptography
-            </p>
+            <div className="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+              <p>
+                My work includes interview prep tools, terminal-based practice
+                apps, and the backend services that support them.
+              </p>
+              <p>
+                Projects include PrepDragon, GrepLab, and other learning-focused
+                tools.
+              </p>
+            </div>
             <div className="flex flex-wrap gap-2">
-              <Link
-                href="/#projects"
+              <a
+                href="#projects"
                 className="inline-flex items-center justify-center border border-slate-900 bg-slate-900 px-5 py-2 text-sm font-semibold text-white transition hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 dark:border-slate-100 dark:bg-slate-100 dark:text-slate-950 dark:hover:bg-slate-200"
               >
                 View Projects
-              </Link>
+              </a>
               <a
                 href="/resume.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center border border-slate-300 px-5 py-2 text-sm font-semibold text-slate-800 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-200 dark:border-slate-700 dark:text-slate-200 dark:hover:border-slate-500 dark:hover:bg-slate-900"
               >
-                Resume
+                View Resume
               </a>
             </div>
           </div>
           <div
-            aria-label="Headshot placeholder"
-            className="mx-auto grid h-36 w-36 shrink-0 place-items-center rounded-full border-2 border-stone-400/80 bg-[hsl(42_28%_88%)] md:-ml-12 md:mx-0 md:h-44 md:w-44 dark:border-slate-600 dark:bg-slate-800"
+            className="relative mx-auto h-36 w-36 shrink-0 overflow-hidden rounded-full border-2 border-stone-400/80 bg-[hsl(42_28%_88%)] md:ml-0 md:h-44 md:w-44 dark:border-slate-600 dark:bg-slate-800"
           >
-            <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
-              Photo
-            </span>
+            <Image
+              src="/my-face.jpeg"
+              alt="Jayson Sao"
+              fill
+              sizes="(min-width: 768px) 11rem, 9rem"
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
       </section>
 
       <section id="about" className="scroll-mt-28 space-y-4 border-t border-slate-200 pt-10 dark:border-slate-800">
-        <p className="text-xs uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">About</p>
         <h2 className="text-2xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
-          How I work
+          What I Care About
         </h2>
         <div className="space-y-3 text-base text-slate-700 dark:text-slate-300">
           <p>
-            I&apos;m a software engineer who enjoys building systems that teach,
-            adapt, and scale.
+            I care about clarity in both user experience and system design. If a
+            system is hard to reason about, it&apos;s hard to trust, maintain, or
+            extend.
           </p>
           <p>
-            I care about clarity in both user experience and system design, so the
-            product and architecture stay easy to reason about.
+            I focus on learning through interaction: practicing real workflows,
+            getting feedback, and improving through repetition instead of passive
+            reading.
           </p>
           <p>
-            My work spans interactive learning tools, distributed systems, and
-            cryptography with an emphasis on robust and explainable behavior.
-          </p>
-          <p>
-            I&apos;m most interested in problems where infrastructure depth directly
-            improves human understanding.
+            I&apos;m most interested in building reliable foundations so people can
+            focus on learning and doing the work, not fighting the tool.
           </p>
         </div>
       </section>
 
       <section id="skills" className="scroll-mt-28 space-y-5 border-t border-slate-200 pt-10 dark:border-slate-800">
-        <p className="text-xs uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
-          Skills / Focus Areas
-        </p>
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="space-y-3">
-            <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100">Focus Areas</h3>
-            <ul className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
-              {focusAreas.map((item) => (
-                <li key={item}>• {item}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="space-y-3">
-            <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100">Core Tech</h3>
-            <p className="text-sm text-slate-700 dark:text-slate-300">{coreTech.join(" · ")}</p>
+        <h2 className="text-2xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
+          Focus Areas
+        </h2>
+        <div className="space-y-5">
+          <ul className="list-disc space-y-2 pl-5 text-base text-slate-700 dark:text-slate-300">
+            {focusAreas.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <p className="text-sm text-slate-600 dark:text-slate-300">
+            Most of this is best shown in the projects section below.
+          </p>
+          <div className="space-y-2">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
+              Tools I Use Often
+            </h3>
+            <p className="text-sm text-slate-700 dark:text-slate-300">{coreTech.join(", ")}</p>
           </div>
         </div>
       </section>
 
-      <section className="space-y-5 border-t border-slate-200 pt-10 dark:border-slate-800">
+      <section className="max-w-4xl space-y-4 border-t border-slate-200 pt-10 dark:border-slate-800">
         <p className="text-xs uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
-          Experience
+          Certifications
         </p>
-        <ul className="grid gap-3 text-base text-slate-700 dark:text-slate-300 md:grid-cols-3">
+        <div className="space-y-1 text-slate-700 dark:text-slate-300">
+          <p className="text-base font-medium text-slate-900 dark:text-slate-100">
+            AWS Certified Solutions Architect - Associate
+          </p>
+          <p className="text-sm">In progress (target: 2026)</p>
+          <p className="text-sm">
+            Focused on cloud architecture, reliability, and cost-aware system
+            design.
+          </p>
+        </div>
+      </section>
+
+      <section className="max-w-4xl space-y-5 border-t border-slate-200 pt-10 dark:border-slate-800">
+        <p className="text-xs uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
+          Work Experience
+        </p>
+        <ul className="space-y-2 text-base text-slate-700 dark:text-slate-300">
           {experienceHighlights.map((item) => (
-            <li
-              key={item}
-              className="border border-stone-300/80 bg-[hsl(42_30%_90%)] px-4 py-3 dark:border-slate-700 dark:bg-[hsl(217_25%_16%)]"
-            >
-              {item}
-            </li>
+            <li key={item}>{item}</li>
           ))}
         </ul>
       </section>

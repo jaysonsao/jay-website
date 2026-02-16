@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import NavHashLink from "@/components/NavHashLink";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const spaceGrotesk = Space_Grotesk({
@@ -42,7 +43,7 @@ export default function RootLayout({
       <body className={`${spaceGrotesk.className} bg-background text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100`}>
         <div className="flex min-h-screen flex-col">
           <ThemeToggle />
-          <header className="sticky top-0 z-40 border-b border-slate-200/90 bg-[hsla(42,32%,93%,0.95)] dark:border-slate-800 dark:bg-slate-950/95">
+          <header className="sticky top-0 z-40 border-b border-black bg-[hsl(42_32%_93%)] dark:border-black dark:bg-slate-950">
             <div className="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6">
               <Link href="/" className="flex flex-col leading-tight no-underline hover:no-underline">
                 <span className="text-base font-semibold tracking-tight text-slate-900 dark:text-slate-100">
@@ -54,9 +55,9 @@ export default function RootLayout({
               </Link>
               <nav className="flex w-full items-center justify-between gap-3 sm:w-auto sm:justify-end">
                 <div className="hidden items-center gap-3 sm:flex">
-                  <Link href="/#projects" className={navLinkClass}>
+                  <NavHashLink href="/#projects" targetId="projects" className={navLinkClass}>
                     Projects
-                  </Link>
+                  </NavHashLink>
                   <Link href="/koi-pond" className={navLinkClass}>
                     Koi Pond
                   </Link>
