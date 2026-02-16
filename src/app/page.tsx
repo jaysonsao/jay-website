@@ -66,7 +66,7 @@ export default function Home() {
             </div>
           </div>
           <div
-            className="relative mx-auto h-36 w-36 shrink-0 overflow-hidden rounded-full border-2 border-stone-400/80 bg-[hsl(42_28%_88%)] md:ml-0 md:h-44 md:w-44 dark:border-slate-600 dark:bg-slate-800"
+            className="relative mx-auto h-32 w-32 shrink-0 overflow-hidden rounded-full border-2 border-stone-400/80 bg-[hsl(42_28%_88%)] md:ml-0 md:h-40 md:w-40 dark:border-slate-600 dark:bg-slate-800"
           >
             <Image
               src="/my-face.jpeg"
