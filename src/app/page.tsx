@@ -18,6 +18,7 @@ const coreTech = [
   "AWS",
   "PostgreSQL",
   "MongoDB",
+  "Django"
 ];
 
 const experienceHighlights = [
@@ -25,6 +26,12 @@ const experienceHighlights = [
   "Intern II / Co-op, SafeLogic (2024-2025): Worked on internal tools and FIPS 140-3 support tasks.",
   "Part-Time Developer, BostonCentral.com (2019-Present): Maintain and ship web product updates.",
 ];
+
+const education = {
+  school: "Boston University",
+  degree:
+    "Bachelor of Arts in Computer Science, Minor in Economics, Minor in Mathematics",
+};
 
 export default function Home() {
   return (
@@ -36,7 +43,7 @@ export default function Home() {
               Jayson Sao
             </p>
             <h1 className="max-w-3xl text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl">
-              I build software tools that help people learn by doing.
+            Software Engineer specializing in Cryptography, AI Systems, and Developer Tools
             </h1>
             <div className="space-y-2 text-sm text-slate-600 dark:text-slate-300">
               <p>
@@ -124,6 +131,29 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="max-w-4xl space-y-5 border-t border-slate-200 pt-10 dark:border-slate-800">
+        <p className="text-xs uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
+          Work Experience
+        </p>
+        <ul className="space-y-2 text-base text-slate-700 dark:text-slate-300">
+          {experienceHighlights.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="max-w-4xl space-y-5 border-t border-slate-200 pt-10 dark:border-slate-800">
+        <p className="text-xs uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
+          Education
+        </p>
+        <div className="space-y-1 text-slate-700 dark:text-slate-300">
+          <p className="text-base font-medium text-slate-900 dark:text-slate-100">
+            {education.school}
+          </p>
+          <p className="text-sm">{education.degree}</p>
+        </div>
+      </section>
+
       <section className="max-w-4xl space-y-4 border-t border-slate-200 pt-10 dark:border-slate-800">
         <p className="text-xs uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
           Certifications
@@ -140,25 +170,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="max-w-4xl space-y-5 border-t border-slate-200 pt-10 dark:border-slate-800">
-        <p className="text-xs uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
-          Work Experience
-        </p>
-        <ul className="space-y-2 text-base text-slate-700 dark:text-slate-300">
-          {experienceHighlights.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </section>
-
       <section id="projects" className="scroll-mt-28 space-y-6 border-t border-slate-200 pt-10 dark:border-slate-800">
         <div className="space-y-2">
           <p className="text-xs uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
             Featured Projects
           </p>
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
-            Project work first.
-          </h2>
         </div>
         <ProjectStack projects={projects} />
       </section>

@@ -13,14 +13,14 @@ function ProjectCard({ project }: { project: Project }) {
       className="group block no-underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(186_70%_60%)] dark:focus-visible:ring-[hsl(186_70%_72%)]"
     >
       <article className="relative flex flex-col overflow-hidden border border-stone-300/80 bg-[hsl(42_30%_92%)] transition group-hover:border-stone-400 dark:border-slate-700 dark:bg-[hsl(217_25%_16%)] dark:group-hover:border-slate-500 md:flex-row">
-        <div className="relative flex w-full shrink-0 items-center justify-center border-b border-stone-300/80 bg-[hsl(42_24%_89%)] p-3 dark:border-slate-700 dark:bg-slate-900 md:w-80 md:border-b-0 md:border-r">
+        <div className="relative flex w-full shrink-0 items-center justify-center border-b border-stone-300/80 bg-[hsl(42_24%_89%)] p-3 dark:border-slate-700 dark:bg-slate-900 md:w-64 md:border-b-0 md:border-r">
           {project.image ? (
             <div className="relative aspect-[47/39] w-full overflow-hidden border border-stone-300/80 bg-[hsl(42_38%_94%)] dark:border-slate-700 dark:bg-slate-950">
               <Image
                 src={project.image}
                 alt={project.imageAlt ?? project.title}
                 fill
-                sizes="(min-width: 768px) 320px, 100vw"
+                sizes="(min-width: 768px) 256px, 100vw"
                 className="object-contain p-1"
               />
             </div>
@@ -73,17 +73,6 @@ function ProjectCard({ project }: { project: Project }) {
                 View Project
               </span>
             </div>
-          </div>
-
-          <div className="mt-2 flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.2em] text-slate-600 dark:text-slate-300">
-            {project.highlights.slice(0, 3).map((highlight) => (
-              <span
-                key={`${project.slug}-${highlight}`}
-                className="border border-stone-300 bg-[hsl(42_34%_93%)] px-2 py-0.5 dark:border-slate-700 dark:bg-slate-800"
-              >
-                {highlight}
-              </span>
-            ))}
           </div>
         </div>
       </article>

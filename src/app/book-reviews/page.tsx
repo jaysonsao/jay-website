@@ -30,8 +30,7 @@ export default function BookReviewsPage() {
           Quality reads from my shelf
         </h1>
         <p className="max-w-2xl text-base text-slate-600 dark:text-slate-300">
-          Light notes from books that stuck, quick to scan and easy to reuse in
-          product work.
+          Below you will find some of my favorite reads from my very own personal library, along with my thoughts on them. Feel free to browse through, and even reach out to discuss them!
         </p>
       </section>
 

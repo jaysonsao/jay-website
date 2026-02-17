@@ -31,7 +31,16 @@ export const projects: Project[] = [
     focus: "Turns vague prep into structured, confidence-building coaching loops.",
     image: preview("prepdragon_preview.png"),
     imageAlt: "PrepDragon interview prep mobile preview",
-    stack: ["Next.js", "OpenAI", "Supabase"],
+    link: "https://github.com/jaysonsao/prepdragon",
+    stack: [
+      "Gemini 2.5 Flash",
+      "LangChain",
+      "Next.js",
+      "MongoDB",
+      "Silero TTS",
+      "GazeTracking",
+      "Pytoon",
+    ],
     highlights: [
       "Multi-agent orchestration",
       "Real-time evaluation",
@@ -39,7 +48,7 @@ export const projects: Project[] = [
     ],
     detail: {
       intro:
-        "PrepDragon is a focused practice loop for behavioral and technical interviews. The goal is to keep sessions short while improving signal quality.",
+        "PrepDragon is an AI-powered interview practice tool that provides adaptive feedback for both technical and behavioral rounds. I originally built it to help myself after finding I struggled with confidence during HireVue and other interview settings. I often felt nervous when talking about myself and answering questions.\n\nThe main point of an interview is not to rehearse every possible answer; that part can be practiced. Confidence, however, is much harder to develop.\n\nPrepDragon aims to bridge this gap by measuring a user's confidence through eye tracking and tone analysis, then delivering personalized feedback to help improve overall interview performance.\n\nCurrently built on Gemini 2.5 Flash, PrepDragon supports drop-in API switching and can be run locally, provided you supply your own API key.",
       problem:
         "Most interview practice tools are either too generic or too heavy, so users drop off before building confidence.",
       approach:
@@ -61,7 +70,7 @@ export const projects: Project[] = [
     highlights: ["Guided commits", "Safe sandboxing", "Checkpoint recovery"],
     detail: {
       intro:
-        "LearnGit is a bite-sized tutorial that focuses on practical Git habits instead of endless theory.",
+        "LearnGit is an interactive tutorial focused on practical Git habits rather than endless theory. I built LearnGit to teach myself the fundamentals of Git, gradually progressing to more advanced concepts such as merging, rebasing, and core workflows.\n\nThe project features a real-time, integrated terminal running in a sandboxed environment, with properly sanitized input handling and robust error detection. LearnGit enables users to learn through an interactive lesson plan and immediately test commands directly in the terminal.\n\nOnce lessons are complete, users are free to continue experimenting on their own using the hosted sandbox terminal. All terminals are provisioned using Docker containers.",
       problem:
         "New developers often learn Git under pressure, which leads to fragile habits and avoidable mistakes.",
       approach:
@@ -83,7 +92,7 @@ export const projects: Project[] = [
     highlights: ["Progressive lessons", "Inline checks", "Replayable labs"],
     detail: {
       intro:
-        "GrepLab is a guided sandbox that helps developers learn regex in context, with an actual terminal.",
+        "GrepLab is a guided sandbox designed to help developers learn and practice regular expressions in context through a simulated terminal experience. As a precursor to LearnGit, GrepLab was built after I repeatedly found myself struggling to remember regex syntax and patterns.\n\nWhile it is easy to look things up on the fly these days, I wanted to understand regular expressions thoroughly and apply them confidently in real-world scenarios. GrepLab emphasizes hands-on learning through structured exercises that mirror practical use cases, allowing users to experiment, iterate, and build intuition for regex without the overhead or risk of a real system.",
       problem:
         "Regex and grep are powerful, but the learning curve is steep and tooling feedback is often too abstract.",
       approach:
@@ -105,7 +114,7 @@ export const projects: Project[] = [
     highlights: ["Guided prompts", "Shared vaults", "Smart sorting"],
     detail: {
       intro:
-        "Virtual Photo Albums explores how lightweight prompts can turn photo libraries into living stories.",
+        "Virtual Photo Albums is a quiet, personal space for storing and sharing memories. I originally built it for a friend who wanted a private place for their photos, something that felt personal rather than performative. The idea was inspired by how my parents kept their own photo collections: meaningful, private, and shared only with people they trusted.\n\nThe app is designed like a digital scrapbook. Users can upload photos, organize them into albums, and decide exactly who gets to see them. There are no feeds, no pressure to share publicly, just a simple space to preserve moments and share them intentionally.\n\nVirtual Photo Albums is meant to be a calmer alternative to social media, focused on ownership, privacy, and the joy of revisiting memories on your own terms.",
       problem:
         "People capture a lot but rarely revisit or curate their archives, so memories are left buried in camera rolls.",
       approach:

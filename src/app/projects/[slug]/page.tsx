@@ -18,6 +18,10 @@ export default async function ProjectPage({
   if (!project) {
     notFound();
   }
+  const introParagraphs = project.detail.intro
+    .split("\n\n")
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean);
 
   return (
     <div className="mx-auto w-full max-w-4xl space-y-8">
@@ -36,7 +40,7 @@ export default async function ProjectPage({
               alt={project.imageAlt ?? project.title}
               fill
               sizes="100vw"
-              className="object-cover"
+              className="object-contain p-3 sm:p-5"
               priority
             />
           ) : (
@@ -50,23 +54,25 @@ export default async function ProjectPage({
       <section className="grid gap-10 border-t border-stone-300 pt-8 dark:border-slate-800 md:grid-cols-[1.4fr,0.6fr]">
         <div className="space-y-4">
           <div className="space-y-2">
-            <h1 className="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
-              {project.title}
-            </h1>
-            <p className="text-base text-slate-600 dark:text-slate-300">{project.summary}</p>
+            <div className="flex items-center justify-between gap-3">
+              <h1 className="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
+                {project.title}
+              </h1>
+              <a
+                href={project.link ?? "https://example.com"}
+                target="_blank"
+                rel="noreferrer"
+                className="ml-auto text-sm font-semibold text-[hsl(186_70%_38%)] transition hover:text-[hsl(186_70%_30%)] dark:text-[hsl(186_70%_72%)] dark:hover:text-[hsl(186_72%_82%)]"
+              >
+                Project Link
+              </a>
+            </div>
           </div>
-          <p className="max-w-2xl text-base text-slate-700 dark:text-slate-300">
-            A detailed project story is coming soon. This placeholder will be
-            replaced with the final case study.
-          </p>
-          <a
-            href={project.link ?? "https://example.com"}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center text-sm font-semibold text-[hsl(186_70%_38%)] transition hover:text-[hsl(186_70%_30%)] dark:text-[hsl(186_70%_72%)] dark:hover:text-[hsl(186_72%_82%)]"
-          >
-            Project link →
-          </a>
+          <div className="max-w-2xl space-y-4 text-base text-slate-700 dark:text-slate-300">
+            {introParagraphs.map((paragraph, index) => (
+              <p key={`${project.slug}-intro-${index}`}>{paragraph}</p>
+            ))}
+          </div>
         </div>
         <aside className="h-fit border border-stone-300 bg-[hsl(42_36%_92%)] px-5 py-4 dark:border-slate-700 dark:bg-slate-900">
           <p className="text-xs uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">

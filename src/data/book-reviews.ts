@@ -36,6 +36,16 @@ const baseBooks: BaseBook[] = [
     author: "Ernest Cline",
     status: "read-noted",
     image: "/covers/armada.jpg",
+    takeaway:
+      "A slow start turns into a standout sci-fi read with a strong late twist and thoughtful commentary.",
+    review: [
+      "What started a little slow and a little too nerdy for my style quickly accelerated into one of my most favorite, if not top, reads of all time. Ernest Cline writes Armada from the perspective of Zack Lightman, whom I could relate to because of his strong affinity for and obsession with video games.",
+      "It is cool to see a described scenario where what otherwise seems like a life wasted on 'that damn game' ends up being necessary for the defense of the planet. I liked the concept of a special draft, a secret military entity watching and tracking the skills of their players. I found it reminiscent of how kids sometimes imagine a scout drives by, secretly watching as they play basketball in their driveway. Similar vibes.",
+      "Initially, I found his obsession with his father's memorabilia quite strange. I fully thought that was an overexpressed profile on Zack's background.",
+      "It demonstrated how a person can fall into traps of either living in the past or living through another person. Zack does both. It was interesting waiting to see how the author would tie this all together, and it was certainly worth the wait. This read was truly incredible, and after entering Phase Two of the book, I could not stop reading.",
+      "This book has an exceptional ending twist with the antagonist ending up much different from what was anticipated. An AI representative, sent by some intergalactic council to assess the human race's compatibility. This twist was thought-provoking because it reflects on society and humanity as a whole. How they respond to perceived threats, how they communicate with the public, how information gets distorted or parallelly theorized by the regular Joe.",
+      "I felt a sense of extreme realism, hearing the description of a government conspiracy amplified to the maximum. Not so much the greatest comparison, but as the Epstein files are being released, it felt similar to how much the government chooses to hide.",
+    ],
   },
   {
     slug: "we-are-legion",
@@ -81,65 +91,17 @@ const baseBooks: BaseBook[] = [
   },
 ];
 
-const loremSentences = [
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  "Vivamus faucibus purus at urna eleifend, id laoreet arcu varius.",
-  "Sed nec massa sit amet justo pellentesque luctus vitae ut lectus.",
-  "Pellentesque habitant morbi tristique senectus et netus et malesuada.",
-  "Integer at nibh vel lacus hendrerit viverra at in justo.",
-  "Aliquam erat volutpat, feugiat quis aliquet ac, tempus sit amet sem.",
-  "Donec finibus dui id mi luctus, non porta nibh iaculis.",
-  "Curabitur iaculis justo sed velit blandit, sed interdum purus luctus.",
-  "Mauris auctor neque non sem sodales, vel malesuada velit suscipit.",
-  "Etiam ac elit sed turpis tincidunt malesuada non et odio.",
-  "Suspendisse ultricies ligula at risus eleifend tristique.",
-  "Nullam efficitur massa quis diam consectetur, in feugiat nisl euismod.",
-  "Aenean convallis metus et purus suscipit, at dictum mauris volutpat.",
-  "Morbi congue magna non massa lacinia, vitae faucibus erat mattis.",
-  "Nunc id tortor sit amet arcu interdum mattis sed ut sapien.",
-  "Quisque vitae orci at augue imperdiet hendrerit vitae eget enim.",
-  "Praesent non velit non erat tincidunt convallis in sed augue.",
-  "Phasellus vulputate sapien sed erat bibendum, vitae tempor nunc ultricies.",
-  "Ut gravida tortor eu justo suscipit tincidunt.",
-  "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
-];
-
-const hashString = (value: string) => {
-  let hash = 2166136261;
-  for (let index = 0; index < value.length; index += 1) {
-    hash ^= value.charCodeAt(index);
-    hash = Math.imul(hash, 16777619);
+const buildDefaultReview = (status: BookStatus): string[] => {
+  if (status === "in-progress") {
+    return ["Currently reading. Notes will be added after I finish this book."];
   }
-  return hash >>> 0;
-};
-
-const mulberry32 = (seed: number) => {
-  let t = seed;
-  return () => {
-    t += 0x6d2b79f5;
-    let r = Math.imul(t ^ (t >>> 15), 1 | t);
-    r ^= r + Math.imul(r ^ (r >>> 7), 61 | r);
-    return ((r ^ (r >>> 14)) >>> 0) / 4294967296;
-  };
-};
-
-const buildReviewParagraphs = (seedKey: string, count = 4) => {
-  const random = mulberry32(hashString(seedKey));
-  const paragraphs: string[] = [];
-
-  for (let paragraph = 0; paragraph < count; paragraph += 1) {
-    const sentenceCount = 3 + Math.floor(random() * 3);
-    const chosen: string[] = [];
-
-    for (let sentence = 0; sentence < sentenceCount; sentence += 1) {
-      const pick = loremSentences[Math.floor(random() * loremSentences.length)];
-      chosen.push(pick);
-    }
-
-    paragraphs.push(chosen.join(" "));
+  if (status === "not-started") {
+    return ["Not started yet."];
   }
-
-  return paragraphs;
+  if (status === "read") {
+    return ["Finished reading. I have not added notes yet."];
+  }
+  return ["Read and noted status set. Full notes will be added soon."];
 };
 
 const buildTakeaway = (firstParagraph: string) => {
@@ -148,7 +110,7 @@ const buildTakeaway = (firstParagraph: string) => {
 };
 
 export const bookReviews: BookReview[] = baseBooks.map((book) => {
-  const review = book.review ?? buildReviewParagraphs(book.slug);
+  const review = book.review ?? buildDefaultReview(book.status);
   return {
     ...book,
     review,

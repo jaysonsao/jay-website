@@ -58,9 +58,6 @@ export default function RootLayout({
                   <NavHashLink href="/#projects" targetId="projects" className={navLinkClass}>
                     Projects
                   </NavHashLink>
-                  <Link href="/koi-pond" className={navLinkClass}>
-                    Koi Pond
-                  </Link>
                   <a
                     href="/resume.pdf"
                     target="_blank"
