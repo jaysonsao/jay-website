@@ -24,12 +24,18 @@ export default function NavHashLink({
       return;
     }
 
+    event.preventDefault();
+    if (targetId === "top") {
+      window.scrollTo({ top: 20, behavior: "smooth" });
+      window.history.replaceState(null, "", "/");
+      return;
+    }
+
     const target = document.getElementById(targetId);
     if (!target) {
       return;
     }
 
-    event.preventDefault();
     target.scrollIntoView({ behavior: "smooth", block: "start" });
     window.history.replaceState(null, "", `/#${targetId}`);
   };

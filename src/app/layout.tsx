@@ -11,9 +11,14 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Jayson Sao · Full-Stack Developer",
+  title: "Jayson Sao",
   description:
     "Portfolio and personal site for Jayson Sao, focused on interactive learning products and systems software.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/icon.png",
+  },
 };
 
 const themeInitScript = `
@@ -30,6 +35,9 @@ const themeInitScript = `
 const navLinkClass =
   "inline-flex items-center px-2 py-1 text-sm font-medium text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(186_75%_48%)] dark:text-slate-300 dark:hover:text-slate-100";
 
+const sideNavLinkClass =
+  "inline-flex items-center justify-end border border-stone-300 bg-[hsl(42_32%_93%)] px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-slate-700 no-underline transition hover:border-stone-400 hover:text-slate-900 hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(186_80%_68%)] dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-slate-500 dark:hover:text-slate-100";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -41,14 +49,14 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body className={`${spaceGrotesk.className} bg-background text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100`}>
-        <div className="flex min-h-screen flex-col">
+        <div id="top" className="flex min-h-screen flex-col">
           <ThemeToggle />
-          <header className="sticky top-0 z-40 border-b border-black bg-[hsl(42_32%_93%)] dark:border-black dark:bg-slate-950">
-            <div className="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6">
+          <header className="mx-auto w-full max-w-6xl px-4 py-5 sm:px-6">
+            <div className="flex items-start justify-between">
               <NavHashLink
                 href="/#top"
                 targetId="top"
-                className="flex flex-col leading-tight no-underline hover:no-underline"
+                className="flex flex-col leading-tight no-underline hover:no-underline sm:hidden"
               >
                 <span className="text-base font-semibold tracking-tight text-slate-900 dark:text-slate-100">
                   Jayson Sao
@@ -57,33 +65,48 @@ export default function RootLayout({
                   Software Engineer
                 </span>
               </NavHashLink>
-              <nav className="flex w-full items-center justify-between gap-3 sm:w-auto sm:justify-end">
-                <div className="hidden items-center gap-3 sm:flex">
-                  <NavHashLink href="/#projects" targetId="projects" className={navLinkClass}>
-                    Projects
-                  </NavHashLink>
-                  <a
-                    href="/resume.pdf"
-                    target="_blank"
-                    rel="noreferrer"
-                    className={navLinkClass}
-                  >
-                    Resume
-                  </a>
-                  <Link href="/book-reviews" className={navLinkClass}>
-                    Book Reviews
-                  </Link>
-                </div>
-                <Link
-                  href="/#contact"
-                  className="inline-flex items-center border border-slate-300 px-3 py-1.5 text-sm font-semibold text-slate-700 no-underline transition hover:border-slate-400 hover:text-slate-900 hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(186_80%_68%)] dark:border-slate-700 dark:text-slate-200 dark:hover:border-slate-500 dark:hover:text-slate-100"
-                >
-                  Contact
+              <nav className="flex items-center gap-3 sm:hidden">
+                <NavHashLink href="/#projects" targetId="projects" className={navLinkClass}>
+                  Projects
+                </NavHashLink>
+                <Link href="/book-reviews" className={navLinkClass}>
+                  Books
                 </Link>
               </nav>
             </div>
           </header>
-          <main id="top" className="mx-auto w-full flex-1 px-6 py-10">
+          <NavHashLink
+            href="/#top"
+            targetId="top"
+            className="fixed left-4 top-4 z-40 hidden flex-col leading-tight no-underline hover:no-underline sm:flex"
+          >
+            <span className="text-base font-semibold tracking-tight text-slate-900 dark:text-slate-100">
+              Jayson Sao
+            </span>
+            <span className="text-[11px] uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
+              Software Engineer
+            </span>
+          </NavHashLink>
+          <nav className="fixed right-4 top-20 z-40 hidden flex-col items-end gap-2 sm:flex">
+            <NavHashLink href="/#projects" targetId="projects" className={sideNavLinkClass}>
+              Projects
+            </NavHashLink>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className={sideNavLinkClass}
+            >
+              Resume
+            </a>
+            <Link href="/book-reviews" className={sideNavLinkClass}>
+              Book Reviews
+            </Link>
+            <NavHashLink href="/#contact" targetId="contact" className={sideNavLinkClass}>
+              Contact
+            </NavHashLink>
+          </nav>
+          <main className="mx-auto w-full flex-1 px-6 py-10">
             {children}
           </main>
           <footer className="border-t border-slate-200 bg-[hsl(42_32%_93%)] dark:border-slate-800 dark:bg-slate-950">

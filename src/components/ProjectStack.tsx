@@ -4,32 +4,57 @@ import type { Project } from "@/data/projects";
 
 type ProjectStackProps = {
   projects: Project[];
+  showPreview?: boolean;
 };
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({
+  project,
+  showPreview = true,
+}: {
+  project: Project;
+  showPreview?: boolean;
+}) {
+  if (!showPreview) {
+    return (
+      <Link
+        href={`/projects/${project.slug}`}
+        className="group flex items-center justify-between border-b border-stone-300/80 py-2 text-sm no-underline transition hover:border-stone-500 hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(186_70%_60%)] dark:border-slate-700 dark:hover:border-slate-500 dark:focus-visible:ring-[hsl(186_70%_72%)]"
+      >
+        <span className="font-medium text-slate-800 transition group-hover:text-slate-900 dark:text-slate-200 dark:group-hover:text-slate-100">
+          {project.title}
+        </span>
+        <span className="text-xs uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
+          {project.year}
+        </span>
+      </Link>
+    );
+  }
+
   return (
     <Link
       href={`/projects/${project.slug}`}
       className="group block no-underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(186_70%_60%)] dark:focus-visible:ring-[hsl(186_70%_72%)]"
     >
-      <article className="relative flex flex-col overflow-hidden border border-stone-300/80 bg-[hsl(42_30%_92%)] transition group-hover:border-stone-400 dark:border-slate-700 dark:bg-[hsl(217_25%_16%)] dark:group-hover:border-slate-500 md:flex-row">
-        <div className="relative flex w-full shrink-0 items-center justify-center border-b border-stone-300/80 bg-[hsl(42_24%_89%)] p-3 dark:border-slate-700 dark:bg-slate-900 md:w-64 md:border-b-0 md:border-r">
-          {project.image ? (
-            <div className="relative aspect-[47/39] w-full overflow-hidden border border-stone-300/80 bg-[hsl(42_38%_94%)] dark:border-slate-700 dark:bg-slate-950">
-              <Image
-                src={project.image}
-                alt={project.imageAlt ?? project.title}
-                fill
-                sizes="(min-width: 768px) 256px, 100vw"
-                className="object-contain p-1"
-              />
-            </div>
-          ) : (
-            <div className="flex aspect-[47/39] w-full items-center justify-center border border-stone-300/80 bg-[hsl(42_38%_94%)] text-sm uppercase tracking-[0.3em] text-slate-500 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-400">
-              <span className="px-3 text-center">{project.title}</span>
-            </div>
-          )}
-        </div>
+      <article className={`relative flex flex-col overflow-hidden border border-stone-300/80 bg-[hsl(42_30%_92%)] transition group-hover:border-stone-400 dark:border-slate-700 dark:bg-[hsl(217_25%_16%)] dark:group-hover:border-slate-500 ${showPreview ? "md:flex-row" : ""}`}>
+        {showPreview ? (
+          <div className="relative flex w-full shrink-0 items-center justify-center border-b border-stone-300/80 bg-[hsl(42_24%_89%)] p-3 dark:border-slate-700 dark:bg-slate-900 md:w-64 md:border-b-0 md:border-r">
+            {project.image ? (
+              <div className="relative aspect-[47/39] w-full overflow-hidden border border-stone-300/80 bg-[hsl(42_38%_94%)] dark:border-slate-700 dark:bg-slate-950">
+                <Image
+                  src={project.image}
+                  alt={project.imageAlt ?? project.title}
+                  fill
+                  sizes="(min-width: 768px) 256px, 100vw"
+                  className="object-contain p-1"
+                />
+              </div>
+            ) : (
+              <div className="flex aspect-[47/39] w-full items-center justify-center border border-stone-300/80 bg-[hsl(42_38%_94%)] text-sm uppercase tracking-[0.3em] text-slate-500 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-400">
+                <span className="px-3 text-center">{project.title}</span>
+              </div>
+            )}
+          </div>
+        ) : null}
         <div className="flex flex-1 flex-col justify-center px-5 py-4 sm:px-6">
           <div className="flex flex-wrap items-center gap-3">
             <h3 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-100 sm:text-2xl">
@@ -80,11 +105,14 @@ function ProjectCard({ project }: { project: Project }) {
   );
 }
 
-export default function ProjectStack({ projects }: ProjectStackProps) {
+export default function ProjectStack({
+  projects,
+  showPreview = true,
+}: ProjectStackProps) {
   return (
     <div className="space-y-4">
       {projects.map((project) => (
-        <ProjectCard key={project.slug} project={project} />
+        <ProjectCard key={project.slug} project={project} showPreview={showPreview} />
       ))}
     </div>
   );
