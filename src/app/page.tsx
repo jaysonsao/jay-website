@@ -119,9 +119,7 @@ export default function Home() {
               <li key={item}>{item}</li>
             ))}
           </ul>
-          <p className="text-sm text-slate-600 dark:text-slate-300">
-            Most of this is best shown in the projects section below.
-          </p>
+
           <div className="space-y-2">
             <h3 className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
               Tools I Use Often

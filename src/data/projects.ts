@@ -68,6 +68,7 @@ export const projects: Project[] = [
     imageAlt: "LearnGit terminal walkthrough preview",
     stack: ["Node.js", "CLI UX", "Markdown"],
     highlights: ["Guided commits", "Safe sandboxing", "Checkpoint recovery"],
+    link: "https://github.com/jaysonsao/learngit",
     detail: {
       intro:
         "LearnGit is an interactive tutorial focused on practical Git habits rather than endless theory. I built LearnGit to teach myself the fundamentals of Git, gradually progressing to more advanced concepts such as merging, rebasing, and core workflows.\n\nThe project features a real-time, integrated terminal running in a sandboxed environment, with properly sanitized input handling and robust error detection. LearnGit enables users to learn through an interactive lesson plan and immediately test commands directly in the terminal.\n\nOnce lessons are complete, users are free to continue experimenting on their own using the hosted sandbox terminal. All terminals are provisioned using Docker containers.",
@@ -89,6 +90,7 @@ export const projects: Project[] = [
     image: preview("greplab_preview.png"),
     imageAlt: "GrepLab shell using regex preview",
     stack: ["Node.js", "xterm.js", "MDX"],
+    link: "https://github.com/jaysonsao/greplab",
     highlights: ["Progressive lessons", "Inline checks", "Replayable labs"],
     detail: {
       intro:
@@ -111,6 +113,7 @@ export const projects: Project[] = [
     image: preview("photoalbums_preview.png"),
     imageAlt: "Virtual Photo Album personal blog preview",
     stack: ["React", "Firebase", "Framer Motion"],
+    link: "https://github.com/jaysonsao/PhotoAlbums-jbs",
     highlights: ["Guided prompts", "Shared vaults", "Smart sorting"],
     detail: {
       intro:
