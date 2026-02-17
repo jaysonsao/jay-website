@@ -40,7 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-resume.pdf
 note.txt
 notes.txt
 
