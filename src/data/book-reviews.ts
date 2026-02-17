@@ -8,7 +8,7 @@ export type BookReview = {
   image?: string;
   takeaway: string;
   review: string[];
-};
+}; 
 
 type BaseBook = Omit<BookReview, "takeaway" | "review"> & {
   takeaway?: string;
