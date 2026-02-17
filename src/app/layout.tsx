@@ -45,14 +45,18 @@ export default function RootLayout({
           <ThemeToggle />
           <header className="sticky top-0 z-40 border-b border-black bg-[hsl(42_32%_93%)] dark:border-black dark:bg-slate-950">
             <div className="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6">
-              <Link href="/" className="flex flex-col leading-tight no-underline hover:no-underline">
+              <NavHashLink
+                href="/#top"
+                targetId="top"
+                className="flex flex-col leading-tight no-underline hover:no-underline"
+              >
                 <span className="text-base font-semibold tracking-tight text-slate-900 dark:text-slate-100">
                   Jayson Sao
                 </span>
                 <span className="text-[11px] uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
                   Software Engineer
                 </span>
-              </Link>
+              </NavHashLink>
               <nav className="flex w-full items-center justify-between gap-3 sm:w-auto sm:justify-end">
                 <div className="hidden items-center gap-3 sm:flex">
                   <NavHashLink href="/#projects" targetId="projects" className={navLinkClass}>
@@ -79,7 +83,7 @@ export default function RootLayout({
               </nav>
             </div>
           </header>
-          <main className="mx-auto w-full flex-1 px-6 py-10">
+          <main id="top" className="mx-auto w-full flex-1 px-6 py-10">
             {children}
           </main>
           <footer className="border-t border-slate-200 bg-[hsl(42_32%_93%)] dark:border-slate-800 dark:bg-slate-950">
