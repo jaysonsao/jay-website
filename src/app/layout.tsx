@@ -72,7 +72,7 @@ export default function RootLayout({
                 <Link href="/blog" className={navLinkClass}>
                   Blog
                 </Link>
-                <Link href="/book-reviews" className={navLinkClass}>
+                <Link href="/book" className={navLinkClass}>
                   Books
                 </Link>
                 <a
@@ -121,7 +121,7 @@ export default function RootLayout({
             <Link href="/blog" className={sideNavLinkClass}>
               Blog
             </Link>
-            <Link href="/book-reviews" className={sideNavLinkClass}>
+            <Link href="/book" className={sideNavLinkClass}>
               Book Reviews
             </Link>
             <a

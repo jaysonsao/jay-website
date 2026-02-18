@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { bookReviews } from "@/data/book";
+import { bookReviews } from "@/data/book-reviews";
 import { getBookStatusMeta, type BookStatus } from "@/lib/bookStatus";
 
 const statusSortOrder: Record<BookStatus, number> = {

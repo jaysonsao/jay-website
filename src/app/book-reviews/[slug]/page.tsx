@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { bookReviews } from "@/data/book";
+import { bookReviews } from "@/data/book-reviews";
 import { getBookStatusMeta } from "@/lib/bookStatus";
 
 export function generateStaticParams() {
