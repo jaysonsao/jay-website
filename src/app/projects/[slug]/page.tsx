@@ -26,10 +26,10 @@ export default async function ProjectPage({
   return (
     <div className="mx-auto w-full max-w-4xl space-y-8">
       <Link
-        href="/"
+        href="/projects"
         className="text-xs uppercase tracking-[0.3em] text-slate-500 transition hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
       >
-        ← Back to home
+        ← Back to projects
       </Link>
 
       <section className="overflow-hidden border border-stone-300 bg-[hsl(42_36%_92%)] dark:border-slate-700 dark:bg-slate-900">

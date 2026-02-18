@@ -66,14 +66,25 @@ export default function RootLayout({
                 </span>
               </NavHashLink>
               <nav className="flex items-center gap-3 sm:hidden">
-                <NavHashLink href="/#projects" targetId="projects" className={navLinkClass}>
+                <Link href="/projects" className={navLinkClass}>
                   Projects
-                </NavHashLink>
+                </Link>
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={navLinkClass}
+                >
+                  Resume
+                </a>
                 <Link href="/blog" className={navLinkClass}>
                   Blog
                 </Link>
                 <Link href="/book" className={navLinkClass}>
-                  Books
+                  Book Reviews
+                </Link>
+                <Link href="/about" className={navLinkClass}>
+                  Experience
                 </Link>
                 <a
                   href="https://curius.app/jayson-sao"
@@ -82,6 +93,9 @@ export default function RootLayout({
                   className={navLinkClass}
                 >
                   Curious
+                </a>
+                <a href="mailto:jaysonsao@gmail.com" className={navLinkClass}>
+                  Contact
                 </a>
                 <a
                   href="https://github.com/jaysonsao"
@@ -107,9 +121,9 @@ export default function RootLayout({
             </span>
           </NavHashLink>
           <nav className="fixed right-4 top-20 z-40 hidden flex-col items-end gap-2 sm:flex">
-            <NavHashLink href="/#projects" targetId="projects" className={sideNavLinkClass}>
+            <Link href="/projects" className={sideNavLinkClass}>
               Projects
-            </NavHashLink>
+            </Link>
             <a
               href="/resume.pdf"
               target="_blank"
@@ -124,6 +138,9 @@ export default function RootLayout({
             <Link href="/book" className={sideNavLinkClass}>
               Book Reviews
             </Link>
+            <Link href="/about" className={sideNavLinkClass}>
+              Experience
+            </Link>
             <a
               href="https://curius.app/jayson-sao"
               target="_blank"
@@ -131,6 +148,9 @@ export default function RootLayout({
               className={sideNavLinkClass}
             >
               Curious
+            </a>
+            <a href="mailto:jaysonsao@gmail.com" className={sideNavLinkClass}>
+              Contact
             </a>
             <a
               href="https://github.com/jaysonsao"
@@ -140,15 +160,12 @@ export default function RootLayout({
             >
               GitHub
             </a>
-            <NavHashLink href="/#contact" targetId="contact" className={sideNavLinkClass}>
-              Contact
-            </NavHashLink>
           </nav>
           <main className="mx-auto w-full flex-1 px-6 py-10">
             {children}
           </main>
           <footer className="border-t border-slate-200 bg-[hsl(42_32%_93%)] dark:border-slate-800 dark:bg-slate-950">
-            <div className="mx-auto grid w-full max-w-6xl gap-4 px-4 py-8 text-sm text-slate-500 dark:text-slate-400 sm:grid-cols-3 sm:items-center sm:px-6">
+            <div className="mx-auto grid w-full max-w-6xl gap-4 px-4 py-7 text-sm text-slate-500 dark:text-slate-400 sm:grid-cols-3 sm:items-center sm:px-6">
               <p className="text-center sm:text-left">© {new Date().getFullYear()} Jayson Sao. All rights reserved.</p>
               <div id="contact" className="flex flex-col items-center justify-center gap-2 text-xs font-medium">
                 <p className="uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">Contact</p>
