@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { bookReviews } from "@/data/book-reviews";
+import { bookReviews } from "@/data/book";
 import { getBookStatusMeta, type BookStatus } from "@/lib/bookStatus";
 
 const statusSortOrder: Record<BookStatus, number> = {
@@ -41,7 +41,7 @@ export default function BookReviewsPage() {
           return (
             <Link
               key={book.slug}
-              href={`/book-reviews/${book.slug}`}
+              href={`/book/${book.slug}`}
               className="group block h-full no-underline hover:no-underline"
             >
               <article className="flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-stone-300/80 bg-[hsl(42_30%_90%)] px-5 py-4 shadow-[0_8px_20px_-18px_rgba(15,23,42,0.55)] transition group-hover:border-stone-400 group-hover:shadow-[0_14px_28px_-20px_rgba(15,23,42,0.7)] dark:border-slate-700 dark:bg-[hsl(217_25%_16%)] dark:group-hover:border-slate-500">

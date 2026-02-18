@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { bookReviews } from "@/data/book-reviews";
+import { bookReviews } from "@/data/book";
 import { getBookStatusMeta } from "@/lib/bookStatus";
 
 export function generateStaticParams() {
@@ -24,7 +24,7 @@ export default async function BookReviewPage({
   return (
     <div className="mx-auto max-w-4xl space-y-8 px-4 pb-16 pt-10 sm:pt-12">
       <Link
-        href="/book-reviews"
+        href="/book"
         className="text-xs uppercase tracking-[0.3em] text-slate-500 no-underline transition hover:text-slate-700 hover:no-underline dark:text-slate-400 dark:hover:text-slate-200"
       >
         ← Back to book reviews

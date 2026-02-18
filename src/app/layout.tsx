@@ -69,9 +69,28 @@ export default function RootLayout({
                 <NavHashLink href="/#projects" targetId="projects" className={navLinkClass}>
                   Projects
                 </NavHashLink>
+                <Link href="/blog" className={navLinkClass}>
+                  Blog
+                </Link>
                 <Link href="/book-reviews" className={navLinkClass}>
                   Books
                 </Link>
+                <a
+                  href="https://curius.app/jayson-sao"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={navLinkClass}
+                >
+                  Curious
+                </a>
+                <a
+                  href="https://github.com/jaysonsao"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={navLinkClass}
+                >
+                  GitHub
+                </a>
               </nav>
             </div>
           </header>
@@ -99,9 +118,28 @@ export default function RootLayout({
             >
               Resume
             </a>
+            <Link href="/blog" className={sideNavLinkClass}>
+              Blog
+            </Link>
             <Link href="/book-reviews" className={sideNavLinkClass}>
               Book Reviews
             </Link>
+            <a
+              href="https://curius.app/jayson-sao"
+              target="_blank"
+              rel="noreferrer"
+              className={sideNavLinkClass}
+            >
+              Curious
+            </a>
+            <a
+              href="https://github.com/jaysonsao"
+              target="_blank"
+              rel="noreferrer"
+              className={sideNavLinkClass}
+            >
+              GitHub
+            </a>
             <NavHashLink href="/#contact" targetId="contact" className={sideNavLinkClass}>
               Contact
             </NavHashLink>

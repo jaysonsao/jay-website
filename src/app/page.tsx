@@ -2,25 +2,6 @@ import ProjectStack from "@/components/ProjectStack";
 import NavHashLink from "@/components/NavHashLink";
 import { projects } from "@/data/projects";
 
-const focusAreas = [
-  "Building hands-on learning and practice tools",
-  "Building backend services that are reliable and easy to maintain",
-  "Deploying and running apps in the cloud",
-  "Using security and cryptography where they solve real problems",
-];
-
-const coreTech = [
-  "TypeScript",
-  "Go",
-  "Python",
-  "React",
-  "Next.js",
-  "AWS",
-  "PostgreSQL",
-  "MongoDB",
-  "Django"
-];
-
 const experienceHighlights = [
   "Versetal Information Systems BU Spark! Software Development Lab (2026): Built software features and supported delivery work.",
   "SafeLogic Intern II / Co-op (2024-2025): Worked on internal tools and FIPS 140-3 support tasks.",
@@ -93,26 +74,6 @@ export default function Home() {
             I&apos;m most interested in building reliable foundations so people can
             focus on learning and doing the work, not fighting the tool.
           </p>
-        </div>
-      </section>
-
-      <section id="skills" className="scroll-mt-28 space-y-5 border-t border-slate-200 pt-10 dark:border-slate-800">
-        <h2 className="text-2xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
-          Focus Areas
-        </h2>
-        <div className="space-y-5">
-          <ul className="list-disc space-y-2 pl-5 text-base text-slate-700 dark:text-slate-300">
-            {focusAreas.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-
-          <div className="space-y-2">
-            <h3 className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
-              Tools I Use Often
-            </h3>
-            <p className="text-sm text-slate-700 dark:text-slate-300">{coreTech.join(", ")}</p>
-          </div>
         </div>
       </section>
 
