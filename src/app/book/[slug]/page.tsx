@@ -39,14 +39,19 @@ export default async function BookReviewPage({
             <div
               className={`inline-flex w-fit items-center justify-start gap-2 self-start text-left text-xs uppercase tracking-[0.2em] ${statusMeta.textClassName}`}
             >
-              <span className={`inline-flex h-2 w-2 rounded-full ${statusMeta.dotClassName}`} aria-hidden />
+              <span
+                className={`inline-flex h-2 w-2 rounded-full ${statusMeta.dotClassName}`}
+                aria-hidden
+              />
               <span>{statusMeta.label}</span>
             </div>
             <h1 className="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100 md:text-4xl">
               {book.title}
             </h1>
             {book.author ? (
-              <p className="text-base text-slate-600 dark:text-slate-300">{book.author}</p>
+              <p className="text-base text-slate-600 dark:text-slate-300">
+                {book.author}
+              </p>
             ) : null}
           </div>
           {book.image ? (

@@ -7,9 +7,16 @@ export default function Home() {
         <h1 className="max-w-3xl text-lg font-medium leading-8 text-slate-800 dark:text-slate-200 sm:text-xl sm:leading-9">
           Hi, I&apos;m Jay. I&apos;m a software engineer aspiring to work with AI
           systems and cryptography. I love skiing, reading all things science
-          fiction, and playing rugby. I also dabble in graphic design and
-          writing, and I&apos;ll be posting some of that here. Welcome to my home
-          on the internet.
+          fiction{" "}
+          <Link
+            href="/book"
+            className="text-inherit underline underline-offset-2"
+          >
+            (check out my book reviews!)
+          </Link>
+          , and playing rugby. I also dabble in graphic design and writing, and
+          I&apos;ll be posting some of that here. Welcome to my home on the
+          internet.
         </h1>
         <div className="flex flex-wrap gap-2">
           <Link

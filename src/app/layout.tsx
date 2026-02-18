@@ -77,12 +77,6 @@ export default function RootLayout({
                 >
                   Resume
                 </a>
-                <Link href="/blog" className={navLinkClass}>
-                  Blog
-                </Link>
-                <Link href="/book" className={navLinkClass}>
-                  Book Reviews
-                </Link>
                 <Link href="/about" className={navLinkClass}>
                   Experience
                 </Link>
@@ -132,12 +126,6 @@ export default function RootLayout({
             >
               Resume
             </a>
-            <Link href="/blog" className={sideNavLinkClass}>
-              Blog
-            </Link>
-            <Link href="/book" className={sideNavLinkClass}>
-              Book Reviews
-            </Link>
             <Link href="/about" className={sideNavLinkClass}>
               Experience
             </Link>
