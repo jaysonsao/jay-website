@@ -14,27 +14,23 @@ const education = {
     "Bachelor of Arts in Computer Science, Minor in Economics, Minor in Mathematics",
 };
 
+const sectionLabelClass =
+  "text-xs uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400";
+
+const contentSectionClass =
+  "max-w-4xl space-y-5 border-t border-slate-200 pt-10 dark:border-slate-800";
+
 export default function Home() {
   return (
     <div className="mx-auto w-full max-w-6xl space-y-14 pb-20 pt-6 sm:pt-10">
-      <section className="space-y-6 border-b border-slate-200 pb-10 dark:border-slate-800">
+      <section className="max-w-4xl space-y-6 border-b border-slate-200 pb-10 dark:border-slate-800">
         <div className="space-y-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
-            Jayson Sao
-          </p>
-          <h1 className="max-w-3xl text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl">
-            Software Engineer specializing in Cryptography, AI Systems, and Developer Tools
+          <h1 className="max-w-3xl text-lg font-medium leading-8 text-slate-800 dark:text-slate-200 sm:text-xl sm:leading-9">
+            Hi, I&apos;m Jay. I&apos;m a software engineer aspiring to work with AI
+            systems and cryptography. I love skiing, reading all things science fiction, and
+            playing rugby. I also dabble in graphic design and writing, and I&apos;ll
+            be posting some of that here. Welcome to my home on the internet.
           </h1>
-          <div className="space-y-2 text-sm text-slate-600 dark:text-slate-300">
-            <p>
-              My work includes interview prep tools, terminal-based practice
-              apps, and the backend services that support them.
-            </p>
-            <p>
-              Projects include PrepDragon, GrepLab, and other learning-focused
-              tools.
-            </p>
-          </div>
           <div className="flex flex-wrap gap-2">
             <NavHashLink
               href="/#projects"
@@ -55,30 +51,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="scroll-mt-28 space-y-4 border-t border-slate-200 pt-10 dark:border-slate-800">
-        <h2 className="text-2xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
-          What I Care About
-        </h2>
-        <div className="space-y-3 text-base text-slate-700 dark:text-slate-300">
-          <p>
-            I care about clarity in both user experience and system design. If a
-            system is hard to reason about, it&apos;s hard to trust, maintain, or
-            extend.
-          </p>
-          <p>
-            I focus on learning through interaction: practicing real workflows,
-            getting feedback, and improving through repetition instead of passive
-            reading.
-          </p>
-          <p>
-            I&apos;m most interested in building reliable foundations so people can
-            focus on learning and doing the work, not fighting the tool.
-          </p>
-        </div>
-      </section>
-
-      <section className="max-w-4xl space-y-5 border-t border-slate-200 pt-10 dark:border-slate-800">
-        <p className="text-xs uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
+      <section className={contentSectionClass}>
+        <p className={sectionLabelClass}>
           Work Experience
         </p>
         <ul className="space-y-2 text-base text-slate-700 dark:text-slate-300">
@@ -88,8 +62,8 @@ export default function Home() {
         </ul>
       </section>
 
-      <section className="max-w-4xl space-y-5 border-t border-slate-200 pt-10 dark:border-slate-800">
-        <p className="text-xs uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
+      <section className={contentSectionClass}>
+        <p className={sectionLabelClass}>
           Education
         </p>
         <div className="space-y-1 text-slate-700 dark:text-slate-300">
@@ -100,15 +74,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="max-w-4xl space-y-4 border-t border-slate-200 pt-10 dark:border-slate-800">
-        <p className="text-xs uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
+      <section className={contentSectionClass}>
+        <p className={sectionLabelClass}>
           Certifications
         </p>
         <div className="space-y-1 text-slate-700 dark:text-slate-300">
           <p className="text-base font-medium text-slate-900 dark:text-slate-100">
             AWS Certified Solutions Architect - Associate
           </p>
-          <p className="text-sm">In progress (target: 2026)</p>
+          <p className="text-sm">In progress (target: March 2026)</p>
           <p className="text-sm">
             Focused on cloud architecture, reliability, and cost-aware system
             design.
@@ -118,7 +92,7 @@ export default function Home() {
 
       <section id="projects" className="scroll-mt-28 space-y-6 border-t border-slate-200 pt-10 dark:border-slate-800">
         <div className="space-y-2">
-          <p className="text-xs uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
+          <p className={sectionLabelClass}>
             Featured Projects
           </p>
         </div>
