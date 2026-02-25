@@ -27,13 +27,13 @@ export default async function ProjectPage({
     <div className="mx-auto w-full max-w-4xl space-y-8">
       <Link
         href="/projects"
-        className="text-xs uppercase tracking-[0.3em] text-slate-500 transition hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
+        className="text-xs uppercase tracking-[0.3em] text-slate-500 transition hover:text-slate-700 dark:text-zinc-400 dark:hover:text-zinc-200"
       >
         ← Back to projects
       </Link>
 
-      <section className="overflow-hidden border border-stone-300 bg-[hsl(42_36%_92%)] dark:border-slate-700 dark:bg-slate-900">
-        <div className="relative h-80 w-full bg-[hsl(42_24%_86%)] dark:bg-slate-800 sm:h-[440px]">
+      <section className="overflow-hidden border border-stone-300 bg-[hsl(42_36%_92%)] dark:border-zinc-700 dark:bg-zinc-900">
+        <div className="relative h-80 w-full bg-[hsl(42_24%_86%)] dark:bg-zinc-800 sm:h-[440px]">
           {project.image ? (
             <Image
               src={project.image}
@@ -44,45 +44,45 @@ export default async function ProjectPage({
               priority
             />
           ) : (
-            <div className="flex h-full w-full items-center justify-center text-xs uppercase tracking-[0.3em] text-slate-400 dark:text-slate-500">
+            <div className="flex h-full w-full items-center justify-center text-xs uppercase tracking-[0.3em] text-slate-400 dark:text-zinc-500">
               Preview coming soon
             </div>
           )}
         </div>
       </section>
 
-      <section className="grid gap-10 border-t border-stone-300 pt-8 dark:border-slate-800 md:grid-cols-[1.4fr,0.6fr]">
+      <section className="grid gap-10 border-t border-stone-300 pt-8 dark:border-zinc-800 md:grid-cols-[1.4fr,0.6fr]">
         <div className="space-y-4">
           <div className="space-y-2">
             <div className="flex items-center justify-between gap-3">
-              <h1 className="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
+              <h1 className="text-3xl font-semibold tracking-tight text-slate-900 dark:text-zinc-100">
                 {project.title}
               </h1>
               <a
                 href={project.link ?? "https://example.com"}
                 target="_blank"
                 rel="noreferrer"
-                className="ml-auto text-sm font-semibold text-[hsl(186_70%_38%)] transition hover:text-[hsl(186_70%_30%)] dark:text-[hsl(186_70%_72%)] dark:hover:text-[hsl(186_72%_82%)]"
+                className="ml-auto text-sm font-semibold text-[hsl(186_70%_38%)] transition hover:text-[hsl(186_70%_30%)] dark:text-zinc-200 dark:hover:text-zinc-100"
               >
                 Project Link
               </a>
             </div>
           </div>
-          <div className="max-w-2xl space-y-4 text-base text-slate-700 dark:text-slate-300">
+          <div className="max-w-2xl space-y-4 text-base text-slate-700 dark:text-zinc-300">
             {introParagraphs.map((paragraph, index) => (
               <p key={`${project.slug}-intro-${index}`}>{paragraph}</p>
             ))}
           </div>
         </div>
-        <aside className="h-fit border border-stone-300 bg-[hsl(42_36%_92%)] px-5 py-4 dark:border-slate-700 dark:bg-slate-900">
-          <p className="text-xs uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
+        <aside className="h-fit border border-stone-300 bg-[hsl(42_36%_92%)] px-5 py-4 dark:border-zinc-700 dark:bg-zinc-900">
+          <p className="text-xs uppercase tracking-[0.28em] text-slate-500 dark:text-zinc-400">
             Tech Stack
           </p>
-          <div className="mt-3 flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.2em] text-slate-600 dark:text-slate-300">
+          <div className="mt-3 flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.2em] text-slate-600 dark:text-zinc-300">
             {project.stack.map((tool) => (
               <span
                 key={`${project.slug}-stack-${tool}`}
-                className="border border-stone-300 bg-[hsl(42_35%_92%)] px-2 py-0.5 dark:border-slate-700 dark:bg-slate-800"
+                className="border border-stone-300 bg-[hsl(42_35%_92%)] px-2 py-0.5 dark:border-zinc-700 dark:bg-zinc-800"
               >
                 {tool}
               </span>
