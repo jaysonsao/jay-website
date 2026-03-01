@@ -104,6 +104,27 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "foodmap",
+    title: "FoodShed Boston (Food Equity Mapping)",
+    summary:
+      "Placeholder summary: a map-first app for discovering nearby meals, saving spots, and planning food runs with friends.",
+    role: "Product engineering",
+    year: "Spring 2026",
+    focus:
+      "Placeholder focus copy while the product direction and launch scope are being finalized.",
+    image: preview("foodmap_preview.webp"),
+    imageAlt: "FoodMap restaurant discovery map preview",
+    stack: ["Next.js", "TypeScript", "Maps API"],
+    highlights: ["Location search", "Saved lists", "Route planning"],
+    detail: {
+      intro:
+        "FoodMap is an in-progress project page using placeholder copy for now.\n\nThe concept is a map-first experience that helps users discover local food options quickly, compare nearby choices, and save go-to spots.\n\nThis description is temporary and will be replaced with final product details once the scope is locked.",
+      problem: "Placeholder problem statement for FoodMap.",
+      approach: "Placeholder approach statement for FoodMap.",
+      outcome: "Placeholder outcome statement for FoodMap.",
+    },
+  },
+  {
     slug: "virtual-photo-albums",
     title: "PhotoAlbums",
     summary: "A shared memory space that combines photo albums with lightweight reflection prompts.",

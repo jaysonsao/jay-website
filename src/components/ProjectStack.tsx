@@ -47,7 +47,7 @@ function ProjectCard({
         {showPreview ? (
           <div className="relative flex w-full shrink-0 items-center justify-center border-b border-stone-300/80 bg-[hsl(42_24%_89%)] p-3 dark:border-zinc-700 dark:bg-zinc-900 md:w-64 md:border-b-0 md:border-r">
             {project.image ? (
-              <div className="relative aspect-[47/39] w-full overflow-hidden border border-stone-300/80 bg-[hsl(42_38%_94%)] dark:border-zinc-700 dark:bg-zinc-950">
+              <div className="relative aspect-[47/39] w-full overflow-hidden border border-stone-300/80 bg-[hsl(42_38%_94%)] dark:border-zinc-700 dark:bg-zinc-900">
                 <Image
                   src={project.image}
                   alt={project.imageAlt ?? project.title}
@@ -57,7 +57,7 @@ function ProjectCard({
                 />
               </div>
             ) : (
-              <div className="flex aspect-[47/39] w-full items-center justify-center border border-stone-300/80 bg-[hsl(42_38%_94%)] text-sm uppercase tracking-[0.3em] text-slate-500 dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-400">
+              <div className="flex aspect-[47/39] w-full items-center justify-center border border-stone-300/80 bg-[hsl(42_38%_94%)] text-sm uppercase tracking-[0.3em] text-slate-500 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400">
                 <span className="px-3 text-center">{project.title}</span>
               </div>
             )}

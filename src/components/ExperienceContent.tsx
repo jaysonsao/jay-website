@@ -68,20 +68,6 @@ export default function ExperienceContent({
         </ul>
       </section>
 
-      <section className={sectionCardClass}>
-        <p className={sectionLabelClass}>Awards</p>
-        <ul className="mt-4 space-y-2">
-          {awards.map((award) => (
-            <li
-              key={award}
-              className="border-l-2 border-slate-900 pl-4 text-sm leading-6 text-slate-700 dark:border-zinc-300 dark:text-zinc-300"
-            >
-              {award}
-            </li>
-          ))}
-        </ul>
-      </section>
-
       <div className="grid gap-5 md:grid-cols-2">
         <section className={sectionCardClass}>
           <p className={sectionLabelClass}>Education</p>
@@ -107,6 +93,20 @@ export default function ExperienceContent({
           </div>
         </section>
       </div>
+
+      <section className={sectionCardClass}>
+        <p className={sectionLabelClass}>Awards</p>
+        <ul className="mt-4 space-y-2">
+          {awards.map((award) => (
+            <li
+              key={award}
+              className="border-l-2 border-slate-900 pl-4 text-sm leading-6 text-slate-700 dark:border-zinc-300 dark:text-zinc-300"
+            >
+              {award}
+            </li>
+          ))}
+        </ul>
+      </section>
     </div>
   );
 }
