@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
+import ProjectBackButton from "@/components/ProjectBackButton";
 import { projects } from "@/data/projects";
 
 export function generateStaticParams() {
@@ -25,12 +25,9 @@ export default async function ProjectPage({
 
   return (
     <div className="mx-auto w-full max-w-4xl space-y-8">
-      <Link
-        href="/projects"
-        className="text-xs uppercase tracking-[0.3em] text-slate-500 transition hover:text-slate-700 dark:text-zinc-400 dark:hover:text-zinc-200"
-      >
-        ← Back to projects
-      </Link>
+      <ProjectBackButton
+        className="inline-flex items-center border-0 bg-transparent p-0 text-sm font-medium text-slate-700 transition hover:text-slate-900 dark:text-zinc-300 dark:hover:text-zinc-100"
+      />
 
       <section className="overflow-hidden border border-stone-300 bg-[hsl(42_36%_92%)] dark:border-zinc-700 dark:bg-zinc-900">
         <div className="relative h-80 w-full bg-[hsl(42_24%_86%)] dark:bg-zinc-800 sm:h-[440px]">
@@ -59,7 +56,7 @@ export default async function ProjectPage({
                 {project.title}
               </h1>
               <a
-                href={project.link ?? "https://example.com"}
+                href={project.link ?? "https://github.com/jaysonsao/equitable"}
                 target="_blank"
                 rel="noreferrer"
                 className="ml-auto text-sm font-semibold text-[hsl(186_70%_38%)] transition hover:text-[hsl(186_70%_30%)] dark:text-zinc-200 dark:hover:text-zinc-100"

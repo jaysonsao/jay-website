@@ -107,21 +107,41 @@ export const projects: Project[] = [
     slug: "foodmap",
     title: "FoodShed Boston (Food Equity Mapping)",
     summary:
-      "Placeholder summary: a map-first app for discovering nearby meals, saving spots, and planning food runs with friends.",
+      "An interactive geospatial platform for analyzing food access and equity across Boston neighborhoods.",
     role: "Product engineering",
     year: "Spring 2026",
     focus:
-      "Placeholder focus copy while the product direction and launch scope are being finalized.",
+      "Turns fragmented public data into actionable neighborhood-level food justice insight.",
     image: preview("foodmap_preview.webp"),
-    imageAlt: "FoodMap restaurant discovery map preview",
-    stack: ["Next.js", "TypeScript", "Maps API"],
-    highlights: ["Location search", "Saved lists", "Route planning"],
+    imageAlt: "FoodShed Boston food equity mapping preview",
+    stack: [
+      "React",
+      "Vite",
+      "Leaflet",
+      "Recharts",
+      "Flask",
+      "Python",
+      "PyMongo",
+      "MongoDB",
+      "Pandas",
+      "GeoPandas",
+      "Google Maps API",
+      "U.S. Census API",
+    ],
+    highlights: [
+      "Neighborhood and food-type search",
+      "Radius-based foodshed filtering",
+      "Multi-layer equity overlays",
+    ],
     detail: {
       intro:
-        "FoodMap is an in-progress project page using placeholder copy for now.\n\nThe concept is a map-first experience that helps users discover local food options quickly, compare nearby choices, and save go-to spots.\n\nThis description is temporary and will be replaced with final product details once the scope is locked.",
-      problem: "Placeholder problem statement for FoodMap.",
-      approach: "Placeholder approach statement for FoodMap.",
-      outcome: "Placeholder outcome statement for FoodMap.",
+        "FoodShed Boston is a full-stack geospatial analytics platform built to map food access and equity across Boston neighborhoods. We combined fragmented public datasets into a single interactive system so policymakers, organizers, and residents can analyze how food infrastructure intersects with poverty, demographics, and social vulnerability.\n\nThe platform supports neighborhood and food-type search, radius-based foodshed filtering, demographic overlays, and live counts of food access points to make food justice gaps easier to identify and act on.\n\nBuilt with React, Vite, Leaflet, Recharts, Flask, Python, PyMongo, and MongoDB, the system integrates 8+ public datasets and supports multi-layer analysis across 25 Boston neighborhoods.",
+      problem:
+        "Boston food and demographic data lives in disconnected portals, which makes it hard to understand where food access works and where it fails.",
+      approach:
+        "We designed a layered geospatial explorer with spatial joins and cross-linked datasets so users can query neighborhoods, filter by radius, and compare food infrastructure against equity indicators in one workflow.",
+      outcome:
+        "The platform covers 25 neighborhoods, integrates multiple public data layers, and provides an open-access tool for data-driven food equity planning.",
     },
   },
   {

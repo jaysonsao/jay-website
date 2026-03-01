@@ -189,7 +189,7 @@ export default function Home() {
                       href={`/projects/${project.slug}`}
                       className="group relative block overflow-hidden rounded-lg border-2 border-black bg-[hsl(42_34%_93%)] no-underline transition hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(186_70%_60%)] dark:border-zinc-400 dark:bg-zinc-900 dark:focus-visible:ring-zinc-400"
                     >
-                      <div className="relative aspect-[5/4] w-full">
+                      <div className="relative aspect-[16/10] w-full">
                         {project.image ? (
                           <Image
                             src={project.image}
@@ -202,7 +202,7 @@ export default function Home() {
                           <div className="h-full w-full bg-[hsl(42_34%_88%)] dark:bg-zinc-800" />
                         )}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-                        <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4">
+                        <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 p-3">
                           <p className="text-base font-semibold text-white sm:text-lg">
                             {project.title}
                           </p>
