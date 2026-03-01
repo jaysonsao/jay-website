@@ -34,6 +34,15 @@ export default function ProjectsPage() {
                 <span className="h-px w-16 bg-slate-400/70 dark:bg-zinc-500/70" />
               </div>
 
+              <FadeInOnScroll className="mb-4">
+                <Link
+                  href="/#home-projects"
+                  className="inline-flex items-center text-sm font-medium text-slate-700 no-underline transition hover:text-slate-900 hover:no-underline dark:text-zinc-300 dark:hover:text-zinc-100"
+                >
+                  ← Back
+                </Link>
+              </FadeInOnScroll>
+
               <FadeInOnScroll className="mb-6 space-y-3 text-center">
                 <p className={sectionEyebrowClass}>
                   Projects

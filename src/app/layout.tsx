@@ -125,6 +125,9 @@ export default function RootLayout({
                 >
                   Curious
                 </a>
+                <a href="/book" className={navLinkClass}>
+                  Book Reviews
+                </a>
                 <a href="mailto:jaysonsao@gmail.com" className={navLinkClass}>
                   Contact
                 </a>
@@ -183,6 +186,9 @@ export default function RootLayout({
               className={sideNavLinkClass}
             >
               Curious
+            </a>
+            <a href="/book" className={sideNavLinkClass}>
+              Book Reviews
             </a>
             <a href="mailto:jaysonsao@gmail.com" className={sideNavLinkClass}>
               Contact

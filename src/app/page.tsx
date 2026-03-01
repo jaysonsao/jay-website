@@ -52,14 +52,12 @@ export default function Home() {
                 stripeClass="bg-gradient-to-r from-slate-900 via-slate-600 to-transparent dark:from-zinc-100 dark:via-zinc-300 dark:to-transparent"
               />
               <FadeInOnScroll className="mx-auto w-full max-w-4xl space-y-5 text-center">
-                <p className="mx-auto inline-flex items-center rounded-full border border-black bg-background px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-800 dark:border-zinc-400 dark:bg-zinc-900 dark:text-zinc-200">
-                </p>
                 <h1 className="mx-auto max-w-3xl text-3xl font-black leading-[0.95] tracking-[-0.02em] text-slate-900 dark:text-zinc-100 sm:text-5xl">
                   Hi, I&apos;m Jay.
                 </h1>
                 <p className="mx-auto max-w-2xl text-base leading-7 text-slate-700 dark:text-zinc-300">
                   Software engineer focused on AI systems, cryptography, and
-                  quietly useful products.
+                  building useful products.
                 </p>
               </FadeInOnScroll>
 
@@ -67,12 +65,21 @@ export default function Home() {
                 delayMs={120}
                 className="mt-2 flex flex-wrap justify-center gap-3 sm:mt-3"
               >
-                <Link
-                  href="/#home-projects"
-                  className="inline-flex items-center justify-center rounded-md border border-slate-900 bg-slate-900 px-5 py-2 text-sm font-semibold text-white no-underline transition hover:bg-slate-800 hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-zinc-200"
+                <a
+                  href="#home-projects"
+                  className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-900 bg-slate-900 px-5 py-2 text-sm font-semibold text-white no-underline transition duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-[0_10px_24px_-14px_rgba(15,23,42,0.8)] hover:no-underline active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-zinc-200 dark:hover:shadow-[0_10px_24px_-14px_rgba(244,244,245,0.6)]"
                 >
-                  View Projects ↓
-                </Link>
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full dark:via-zinc-800/20"
+                  />
+                  <span className="relative inline-flex items-center gap-2">
+                    <span>View Projects</span>
+                    <span className="transition-transform duration-300 group-hover:translate-y-0.5">
+                      ↓
+                    </span>
+                  </span>
+                </a>
               </FadeInOnScroll>
             </div>
           </div>

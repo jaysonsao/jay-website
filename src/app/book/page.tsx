@@ -27,12 +27,12 @@ export default function BookReviewsPage() {
           Book Reviews
         </p>
         <h1 className="text-3xl font-semibold tracking-tight text-slate-900 dark:text-zinc-100 md:text-4xl">
-          Quality reads from my shelf
+          quality reads from my bookshelf
         </h1>
         <p className="max-w-2xl text-base text-slate-600 dark:text-zinc-300">
-          Below you will find some of my favorite reads from my very own personal
+          Below you will find all of my favorite reads from my very own personal
           library, along with my thoughts on them. Feel free to browse through,
-          and even reach out to discuss them!
+          and reach out to discuss any of them!
         </p>
       </section>
 
