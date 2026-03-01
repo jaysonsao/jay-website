@@ -30,7 +30,7 @@ const sectionLabelClass =
   "text-xs font-bold uppercase tracking-[0.24em] text-slate-500 dark:text-zinc-400";
 
 const sectionCardClass =
-  "rounded-xl border border-black bg-white/70 p-5 dark:border-zinc-400 dark:bg-zinc-900/40";
+  "rounded-lg border-2 border-black bg-white/80 p-5 dark:border-zinc-400 dark:bg-zinc-900/40";
 
 type ExperienceContentProps = {
   className?: string;

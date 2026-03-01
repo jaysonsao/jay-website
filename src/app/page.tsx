@@ -12,7 +12,7 @@ const sectionClass =
 const shellClass = "mx-auto flex w-full max-w-6xl px-6 py-10 sm:px-8 sm:py-12";
 
 const cardClass =
-  "relative flex w-full flex-col overflow-hidden rounded-[26px] border-2 border-black bg-background p-6 sm:p-8 dark:bg-zinc-900";
+  "relative flex w-full flex-col overflow-hidden rounded-[22px] border-2 border-black bg-background p-6 sm:p-8 dark:bg-zinc-900";
 
 const sectionEyebrowClass =
   "text-xs font-bold uppercase tracking-[0.24em] text-slate-500 dark:text-zinc-400";
@@ -101,7 +101,7 @@ export default function Home() {
               </FadeInOnScroll>
 
               <div className="mx-auto w-full max-w-4xl">
-                <div className="rounded-xl border border-black bg-white/70 p-6 dark:border-zinc-400 dark:bg-zinc-900/40">
+                <div className="rounded-lg border-2 border-black bg-white/80 p-6 dark:border-zinc-400 dark:bg-zinc-900/40">
                   <div className="space-y-5 text-[17px] leading-8 text-slate-700 dark:text-zinc-300">
                     <FadeInOnScroll delayMs={40}>
                       <p>
@@ -187,7 +187,7 @@ export default function Home() {
                   <FadeInOnScroll key={project.slug} delayMs={index * 90}>
                     <Link
                       href={`/projects/${project.slug}`}
-                      className="group relative block overflow-hidden rounded-xl border border-black bg-[hsl(42_34%_93%)] no-underline transition hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(186_70%_60%)] dark:border-zinc-400 dark:bg-zinc-900 dark:focus-visible:ring-zinc-400"
+                      className="group relative block overflow-hidden rounded-lg border-2 border-black bg-[hsl(42_34%_93%)] no-underline transition hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(186_70%_60%)] dark:border-zinc-400 dark:bg-zinc-900 dark:focus-visible:ring-zinc-400"
                     >
                       <div className="relative aspect-[5/4] w-full">
                         {project.image ? (
