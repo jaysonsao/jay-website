@@ -41,30 +41,30 @@
     --ink: 222 16% 18%;
   }
   .dark {
-    --background: 0 0% 5%;
+    --background: 0 0% 10%;
     --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
+    --card: 0 0% 14%;
     --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
+    --popover: 0 0% 14%;
     --popover-foreground: 0 0% 98%;
     --primary: 0 0% 98%;
     --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
+    --secondary: 0 0% 17%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
+    --muted: 0 0% 19%;
+    --muted-foreground: 0 0% 68%;
+    --accent: 0 0% 20%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --border: 0 0% 28%;
+    --input: 0 0% 24%;
+    --ring: 0 0% 72%;
+    --chart-1: 0 0% 55%;
+    --chart-2: 0 0% 45%;
+    --chart-3: 0 0% 65%;
+    --chart-4: 0 0% 35%;
+    --chart-5: 0 0% 75%;
     --ink: 0 0% 98%;
   }
 }
@@ -72,6 +72,9 @@
 
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   * {
     @apply border-border;
   }
@@ -82,7 +85,45 @@
     overflow-x: hidden;
   }
   .dark body {
-    background: hsl(0 0% 5%);
+    background: hsl(var(--background));
     color: hsl(var(--foreground));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+.margin-wiggle {
+  position: absolute;
+  top: 5.5rem;
+  bottom: 1.5rem;
+  width: 26px;
+  pointer-events: none;
+  z-index: 20;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 180'%3E%3Cpath d='M12 0C3 20 21 40 12 60C3 80 21 100 12 120C3 140 21 160 12 180' fill='none' stroke='%23111111' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-size: 24px 180px;
+  background-repeat: repeat-y;
+}
+
+.margin-wiggle-left {
+  left: clamp(4px, calc((100vw - 72rem) / 2 - 22px), 34px);
+}
+
+.margin-wiggle-right {
+  right: clamp(4px, calc((100vw - 72rem) / 2 - 22px), 34px);
+}
+
+.dark .margin-wiggle {
+  filter: invert(1);
+  opacity: 0.4;
+}
+
+@media (max-width: 1279px) {
+  .margin-wiggle {
+    display: none;
   }
 }
