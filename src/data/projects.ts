@@ -29,7 +29,7 @@ export const projects: Project[] = [
     role: "Product design + engineering",
     year: "Fall 2025",
     focus: "Turns vague prep into structured, confidence-building coaching loops.",
-    image: preview("prepdragon_preview.png"),
+    image: preview("prepdragon_preview_v2.png"),
     imageAlt: "PrepDragon interview prep mobile preview",
     link: "https://github.com/jaysonsao/prepdragon",
     stack: [
