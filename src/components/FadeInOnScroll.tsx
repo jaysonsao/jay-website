@@ -55,16 +55,20 @@ export default function FadeInOnScroll({
 
   const style: CSSProperties = {
     opacity: isVisible ? 1 : 0,
-    transform: isVisible ? "translateY(0px)" : `translateY(${offsetY}px)`,
+    transform: isVisible
+      ? "translateY(0px) scale(1)"
+      : `translateY(${offsetY}px) scale(0.96)`,
+    filter: isVisible ? "blur(0px)" : "blur(4px)",
+    transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)",
     transitionDelay: `${delayMs}ms`,
-    transitionDuration: `${durationMs}ms`,
+    transitionDuration: `${durationMs + 200}ms`,
   };
 
   return (
     <div
       ref={containerRef}
       style={style}
-      className={`will-change-[opacity,transform] transition-[opacity,transform] ease-out motion-reduce:transform-none motion-reduce:opacity-100 motion-reduce:transition-none ${className}`}
+      className={`will-change-[opacity,transform,filter] transition-all motion-reduce:transform-none motion-reduce:opacity-100 motion-reduce:transition-none motion-reduce:filter-none ${className}`}
     >
       {children}
     </div>

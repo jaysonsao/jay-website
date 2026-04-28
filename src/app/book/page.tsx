@@ -21,22 +21,18 @@ export default function BookReviewsPage() {
   });
 
   return (
-    <div className="mx-auto max-w-6xl space-y-10 px-4 pb-16 pt-3 sm:pt-4">
-      <section className="space-y-3 border-b border-slate-200 pb-8 dark:border-zinc-800">
-        <p className="text-xs uppercase tracking-[0.28em] text-slate-500 dark:text-zinc-400">
-          Book Reviews
-        </p>
-        <h1 className="text-3xl font-semibold tracking-tight text-slate-900 dark:text-zinc-100 md:text-4xl">
-          quality reads from my bookshelf
+    <div className="mx-auto flex max-w-5xl flex-col gap-12 sm:gap-16 px-6 sm:px-12 py-10 sm:py-16">
+      <section className="space-y-4 text-center sm:text-center flex flex-col items-center">
+        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          Bookshelf
         </h1>
-        <p className="max-w-2xl text-base text-slate-600 dark:text-zinc-300">
-          Below you will find all of my favorite reads from my very own personal
-          library, along with my thoughts on them. Feel free to browse through,
-          and reach out to discuss any of them!
+        <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          Quality reads from my personal library, along with my thoughts and notes. 
+          Feel free to browse through, and reach out to discuss any of them!
         </p>
       </section>
 
-      <section className="grid gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-3">
+      <section className="grid gap-12 sm:gap-14 sm:grid-cols-2">
         {orderedBooks.map((book) => {
           const statusMeta = getBookStatusMeta(book.status);
 
@@ -44,49 +40,51 @@ export default function BookReviewsPage() {
             <Link
               key={book.slug}
               href={`/book/${book.slug}`}
-              className="block h-full no-underline hover:no-underline"
+              className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
-              <article className="flex h-full flex-col justify-between overflow-hidden rounded-md border border-stone-300/80 bg-[hsl(42_30%_90%)] px-5 py-4 dark:border-zinc-700 dark:bg-zinc-900">
-                <div className="flex items-start justify-between gap-4">
-                  <div className="space-y-2">
-                    <div
-                      className={`flex w-fit items-center justify-start gap-2 self-start text-left text-[11px] uppercase tracking-[0.18em] ${statusMeta.textClassName}`}
-                    >
-                      <span
-                        className={`inline-flex h-2 w-2 rounded-full ${statusMeta.dotClassName}`}
-                        aria-hidden
-                      />
-                      <span>{statusMeta.label}</span>
-                    </div>
-                    <h3 className="text-base font-semibold leading-6 text-slate-900 dark:text-zinc-100">
+              <div className="flex flex-col-reverse sm:flex-row items-center sm:items-start justify-between gap-6 text-center sm:text-left h-full">
+                <div className="flex flex-col items-center sm:items-start gap-4 h-full">
+                  <div
+                    className={`inline-flex items-center gap-1.5 rounded-full border border-border/50 bg-secondary/50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider ${statusMeta.textClassName}`}
+                  >
+                    <span
+                      className={`h-1.5 w-1.5 rounded-full ${statusMeta.dotClassName}`}
+                      aria-hidden
+                    />
+                    {statusMeta.label}
+                  </div>
+                  <div className="space-y-1">
+                    <h3 className="text-lg font-bold leading-tight text-foreground transition-colors group-hover:text-primary">
                       {book.title}
                     </h3>
-                    {book.author ? (
-                      <p className="text-xs uppercase tracking-[0.14em] text-slate-500 dark:text-zinc-400">
+                    {book.author && (
+                      <p className="text-sm font-medium text-muted-foreground">
                         {book.author}
                       </p>
-                    ) : null}
-                  </div>
-                  <div className="relative aspect-[3/4] w-16 shrink-0 overflow-hidden border border-stone-300 bg-[hsl(42_35%_92%)] p-0.5 dark:border-zinc-700 dark:bg-zinc-800">
-                    {book.image ? (
-                      <Image
-                        src={book.image}
-                        alt={`Cover of ${book.title}`}
-                        fill
-                        sizes="64px"
-                        className="object-contain p-0.5"
-                      />
-                    ) : (
-                      <div className="absolute inset-1 grid place-content-center bg-gradient-to-br from-[hsl(42_35%_90%)] via-[hsl(42_28%_86%)] to-[hsl(42_35%_90%)] text-center text-[10px] uppercase tracking-[0.2em] text-slate-500 dark:from-zinc-700 dark:via-zinc-800 dark:to-zinc-700 dark:text-zinc-500">
-                        Cover
-                      </div>
                     )}
                   </div>
+                  
+                  <div className="mt-auto pt-6 flex items-center text-xs font-bold uppercase tracking-widest text-muted-foreground transition-colors group-hover:text-primary">
+                    Read review <span className="ml-1 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                  </div>
                 </div>
-                <div className="pt-4 text-[11px] uppercase tracking-[0.18em] text-slate-500 dark:text-zinc-400">
-                  <span>View review</span>
+                
+                <div className="relative aspect-[2/3] w-20 shrink-0 overflow-hidden rounded-md border border-border/50 bg-secondary shadow-sm transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-3">
+                  {book.image ? (
+                    <Image
+                      src={book.image}
+                      alt={`Cover of ${book.title}`}
+                      fill
+                      sizes="(max-width: 640px) 64px, 80px"
+                      className="object-cover"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center bg-muted text-[10px] uppercase tracking-widest text-muted-foreground">
+                      Cover
+                    </div>
+                  )}
                 </div>
-              </article>
+              </div>
             </Link>
           );
         })}

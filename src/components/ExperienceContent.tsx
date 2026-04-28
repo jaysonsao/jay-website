@@ -9,12 +9,12 @@ const experienceHighlights = [
   {
     title: "SafeLogic Intern II / Co-op",
     period: "2024-2025",
-    detail: "Worked on internal tools and FIPS 140-3 support tasks.",
+    detail: "Worked on OpenSSL FIPS 140-3 provider modules, post-quantum LMS signature validation, CI/CD workflows, and internal document intelligence systems for navigating cryptographic compliance standards.",
   },
   {
     title: "BostonCentral.com, Software Developer",
     period: "2019-Present",
-    detail: "Maintain and ship web product updates.",
+    detail: "Built and maintained backend services, analytics systems, newsletter infrastructure, and CMS features for a consumer web platform serving 10M+ annual visitors.",
   },
 ];
 
@@ -85,7 +85,7 @@ export default function ExperienceContent({
             <p className="text-base font-medium text-slate-900 dark:text-zinc-100">
               AWS Certified Solutions Architect - Associate
             </p>
-            <p className="text-sm">In progress (target: March 2026)</p>
+            <p className="text-sm">In progress (target: May 2026)</p>
             <p className="text-sm leading-6">
               Focused on cloud architecture, reliability, and cost-aware system
               design.

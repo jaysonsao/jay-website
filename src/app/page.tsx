@@ -12,7 +12,7 @@ const sectionClass =
 const shellClass = "mx-auto flex w-full max-w-6xl px-6 py-10 sm:px-8 sm:py-12";
 
 const cardClass =
-  "relative flex w-full flex-col overflow-hidden rounded-[22px] border-2 border-black bg-background p-6 sm:p-8 dark:bg-zinc-900";
+  "relative flex w-full flex-col overflow-hidden rounded-[22px] border border-border bg-transparent p-6 sm:p-8";
 
 const sectionEyebrowClass =
   "text-xs font-bold uppercase tracking-[0.24em] text-slate-500 dark:text-zinc-400";
@@ -20,22 +20,20 @@ const sectionEyebrowClass =
 const sectionTitleClass =
   "mt-2 text-3xl font-black leading-[0.95] tracking-[-0.02em] text-slate-900 dark:text-zinc-100 sm:text-4xl";
 
-type SectionChromeProps = {
-  stripeClass: string;
-};
-
-function SectionChrome({ stripeClass }: SectionChromeProps) {
+function SectionChrome() {
   return (
     <>
       <div
         aria-hidden
-        className={`pointer-events-none absolute inset-x-0 top-0 h-1.5 ${stripeClass}`}
+        className="pointer-events-none absolute inset-x-4 top-0 h-[3px] rounded-b-md bg-muted-foreground/20 dark:bg-muted-foreground/30"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute right-4 top-4 flex items-center"
+        className="pointer-events-none absolute right-5 top-5 flex items-center justify-center gap-[3px]"
       >
-        <span className="h-px w-16 bg-slate-400/70 dark:bg-zinc-500/70" />
+        <span className="h-1 w-1 rounded-full bg-muted-foreground/40" />
+        <span className="h-1 w-1 rounded-full bg-muted-foreground/40" />
+        <span className="h-1 w-1 rounded-full bg-muted-foreground/40" />
       </div>
     </>
   );
@@ -49,15 +47,14 @@ export default function Home() {
           <div className={shellClass}>
             <div className={`${cardClass} justify-between`}>
               <SectionChrome
-                stripeClass="bg-gradient-to-r from-slate-900 via-slate-600 to-transparent dark:from-zinc-100 dark:via-zinc-300 dark:to-transparent"
+                
               />
               <FadeInOnScroll className="mx-auto w-full max-w-4xl space-y-5 text-center">
                 <h1 className="mx-auto max-w-3xl text-3xl font-black leading-[0.95] tracking-[-0.02em] text-slate-900 dark:text-zinc-100 sm:text-5xl">
                   Hi, I&apos;m Jay.
                 </h1>
                 <p className="mx-auto max-w-2xl text-base leading-7 text-slate-700 dark:text-zinc-300">
-                  Software engineer focused on AI systems, cryptography, and
-                  building useful products.
+                  I build backend systems, automation pipelines, and security/compliance infrastructure. I've worked on OpenSSL FIPS provider modules, post-quantum signature validation, CI/CD, large-scale data pipelines, and production web systems.
                 </p>
               </FadeInOnScroll>
 
@@ -89,7 +86,7 @@ export default function Home() {
           <div className={shellClass}>
             <div className={cardClass}>
               <SectionChrome
-                stripeClass="bg-gradient-to-r from-rose-700 via-amber-600 to-transparent dark:from-zinc-200 dark:via-zinc-400 dark:to-transparent"
+                
               />
               <FadeInOnScroll className="mb-8 text-center">
                 <p className={sectionEyebrowClass}>
@@ -138,11 +135,47 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="home-employers" className={sectionClass}>
+          <div className={shellClass}>
+            <div className={cardClass}>
+              <SectionChrome />
+              <FadeInOnScroll className="mb-8 text-center">
+                <p className={sectionEyebrowClass}>
+                  Hiring
+                </p>
+                <h2 className={sectionTitleClass}>
+                  For Employers
+                </h2>
+              </FadeInOnScroll>
+
+              <div className="mx-auto w-full max-w-4xl">
+                <div className="rounded-lg border border-border bg-card p-6 sm:p-8 dark:border-zinc-400 dark:bg-zinc-900/40">
+                  <FadeInOnScroll delayMs={40}>
+                    <p className="text-lg leading-relaxed text-foreground mb-6">
+                      I’m looking for new-grad or early-career software engineering roles at startups and mid-stage companies where I can work on backend systems, applied AI, infrastructure, security, developer tools, or data-heavy products.
+                    </p>
+                    <div className="space-y-4">
+                      <p className="font-semibold text-foreground">My primary areas of interest and expertise include:</p>
+                      <ul className="list-inside list-disc space-y-2 text-muted-foreground text-base">
+                        <li>Backend APIs and services</li>
+                        <li>AI/RAG systems</li>
+                        <li>Data pipelines and automation</li>
+                        <li>Security/compliance infrastructure</li>
+                        <li>Product-minded engineering</li>
+                      </ul>
+                    </div>
+                  </FadeInOnScroll>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="home-experience" className={sectionClass}>
           <div className={shellClass}>
             <div className={cardClass}>
               <SectionChrome
-                stripeClass="bg-gradient-to-r from-emerald-700 via-cyan-600 to-transparent dark:from-zinc-200 dark:via-zinc-400 dark:to-transparent"
+                
               />
               <FadeInOnScroll className="mb-7 text-center">
                 <p className={sectionEyebrowClass}>
@@ -163,7 +196,7 @@ export default function Home() {
           <div className={shellClass}>
             <div className={cardClass}>
               <SectionChrome
-                stripeClass="bg-gradient-to-r from-sky-700 via-indigo-600 to-transparent dark:from-zinc-200 dark:via-zinc-400 dark:to-transparent"
+                
               />
               <FadeInOnScroll className="mb-6 space-y-3 text-center">
                 <div>
